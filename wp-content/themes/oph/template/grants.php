@@ -261,11 +261,11 @@
 										$primary_focus_area = $focus; 
 									}
 								}
-								if ( ! $post_thumbnail && ! is_wp_error( $primary_focus_area  && get_field( 'category_image', 'focus-area_' . $primary_focus_area->term_id )['sizes']['lg'] ) ) {
+								if ( ! $post_thumbnail && ! is_wp_error( $primary_focus_area  && is_mumeric( get_field( 'category_image', 'focus-area_' . $primary_focus_area->term_id )['sizes']['lg']) ) ) {
 									$post_thumbnail = get_field( 'category_tile_image', 'focus-area_' . $primary_focus_area->term_id )['sizes']['lg'];
 								}
 
-								if ( ! $post_thumbnail && get_field( 'category_image', 'focus-area_' . $primary_focus_area->term_id )['sizes']['lg'] ) {
+								if ( ! $post_thumbnail && is_numeric( get_field( 'category_image', 'focus-area_' . $primary_focus_area->term_id )['sizes']['lg']) ) {
 									$post_thumbnail = get_field( 'category_image', 'focus-area_' . $primary_focus_area->term_id )['sizes']['lg'];
 								}
 							?>
