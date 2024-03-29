@@ -119,7 +119,7 @@
 
 								<ul>
 									<?php foreach ( $other_links as $link ) : ?>
-										<?php if ( $link['link']['url'] ) : ?>
+										<?php if ( isset($link['link']['url']) ) : ?>
 											<li>
 												<a href="<?php echo $link['link']['url']; ?>">
 													<h4><?php echo $link['link']['title']; ?></h4>

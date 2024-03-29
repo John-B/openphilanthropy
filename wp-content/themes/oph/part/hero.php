@@ -41,10 +41,10 @@
 					</div>
 				<?php endif; ?>
 
-				<?php if ( $hero_button ) : ?>
+				<?php if ( $hero_button && is_array($hero_button)) : ?>
 					<div class="button-group">
 						<?php foreach ( $hero_button as $i ) : ?>
-							<?php if ( $i['link']['url'] ) : ?>
+							<?php if ( is_array($i) && isset($i['link']['url']) ) : ?>
 								<a class="button" href="<?php echo $i['link']['url']; ?>"<?php if ( $i['link']['target'] == '_blank' ) { echo ' target="_blank"'; } ?>><?php echo $i['link']['title']; ?></a>
 							<?php endif; ?>
 						<?php endforeach; ?>

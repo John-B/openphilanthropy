@@ -122,7 +122,7 @@
 						<div class="wrap">
 							<div class="button-group">
 								<?php foreach ( $button as $i ) : ?>
-									<a class="button" href="<?php echo $i['link']['url']; ?>"><?php echo $i['link']['title']; ?></a>
+									<a class="button" href="<?php if(isset($button['link']['url'])) echo $i['link']['url']; ?>"><?php if(isset($button['link']['title'])) echo $i['link']['title']; ?></a>
 								<?php endforeach; ?>
 							</div>
 						</div>

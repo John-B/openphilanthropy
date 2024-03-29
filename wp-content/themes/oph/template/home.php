@@ -88,7 +88,7 @@ $homepage_research_title = get_field('homepage_research_title');
 					<?php if ($grant_title) : ?>
 						<li>
 							<a href="<?php echo $grant_link; ?>">
-								<?php if ($grant_image) : ?>
+								<?php if (is_array($grant_image)) : ?>
 									<div class="bucket-image">
 										<div class="bucket-image__bg">
 											<img src="<?php echo $grant_image; ?>" alt="<?php echo $focus_area; ?>">
@@ -110,7 +110,7 @@ $homepage_research_title = get_field('homepage_research_title');
 			<?php if ($homepage_grants_button) : ?>
 				<div class="button-group">
 					<?php foreach ($homepage_grants_button as $i) : ?>
-						<?php if ($i['link']['url']) : ?>
+						<?php if ( is_array($i) && isset($i['link']['url']) ) : ?>
 							<a class="button" href="<?php echo $i['link']['url']; ?>" <?php if ($i['link']['target'] == '_blank') {
 																							echo ' target="_blank"';
 																						} ?>><?php echo $i['link']['title']; ?></a>
@@ -138,7 +138,7 @@ $homepage_research_title = get_field('homepage_research_title');
 			<?php if ($about_button) : ?>
 				<div class="button-group">
 					<?php foreach ($about_button as $i) : ?>
-						<?php if ($i['link']['url']) : ?>
+						<?php if ( is_array($i) && isset($i['link']['url']) ) : ?>
 							<a class="button" href="<?php echo $i['link']['url']; ?>" <?php if ($i['link']['target'] == '_blank') {
 																							echo ' target="_blank"';
 																						} ?>><?php echo $i['link']['title']; ?></a>
@@ -211,15 +211,15 @@ $homepage_research_title = get_field('homepage_research_title');
 							$research_eyebrow_copy = $i['eyebrow_link'];
 						}
 
-						if ($i['image']) {
+						if ( isset($i['image']) ) {
 							$research_image = $i['image']['sizes']['lg'];
 						}
 
-						if ($i['link']) {
+						if ( isset($i['link']['url']) ) {
 							$research_link = $i['link']['url'];
 						}
 
-						if ($i['title']) {
+						if ( isset($i['title']) ) {
 							$research_title = $i['title'];
 						}
 						?>

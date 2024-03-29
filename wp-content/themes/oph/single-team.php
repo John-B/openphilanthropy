@@ -81,7 +81,7 @@
 			<div class="cta-button__content">
 				<div class="button-group">
 					<?php foreach ( $call_to_action_button as $button ) : ?>
-						<a class="button" href="<?php echo $button['link']['url']; ?>"><?php echo $button['link']['title']; ?></a>
+						<a class="button" href="<?php if(isset($button['link']['url'])) echo $button['link']['url']; ?>"><?php if(isset($button['link']['title'])) echo $button['link']['title']; ?></a>
 					<?php endforeach; ?>
 				</div>
 			</div>
