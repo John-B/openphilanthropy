@@ -255,6 +255,8 @@
 									$focus_only[] = $area; 
 								} 
 								$primary_focus_area = $focus_only[0]; 
+								$focus_ancestors = get_ancestors($primary_focus_area->term_id, '', 'taxonomy'); 
+								$focus_top_ancestor = $focus_ancestors[array_key_last($focus_ancestors)]; 
 
 								foreach ( $focus_only as $focus ) { 
 									if ( $primary_term == $focus->term_id) {
@@ -268,6 +270,7 @@
 								if ( ! $post_thumbnail && is_numeric( $primary_focus_area->term_id ) ) {
 									$post_thumbnail = get_field( 'category_image', 'focus-area_' . $primary_focus_area->term_id )['sizes']['lg'];
 								}
+								$category_color = get_field( 'category_color', 'focus-area_' . $primary_focus_area->term_id ) ?: get_field( 'category_color', 'focus-area_' . $focus_top_ancestor);
 							?>
 
 							<div class="block-feed-post<?php if ( ! $post_thumbnail ) { echo ' no-thumbnail'; } if ( ! $award_date ) { echo ' no-award-date'; } ?>">
@@ -277,7 +280,7 @@
 									</h5>
 								<?php endif; ?>
 
-								<div class="block-feed-post__head">
+								<div class="block-feed-post__head focus_color_<?php echo $category_color; ?>">
 									<?php if ( $post_thumbnail ) : ?>
 										<a href="<?php echo the_permalink(); ?>">
 											<img src="<?php echo $post_thumbnail; ?>" alt="">
@@ -306,7 +309,7 @@
 										<?php 
 										if ( $primary_focus_area && !is_wp_error( $primary_focus_area ) ) : ?>
 											<?php
-												$name = $primary_focus_area->name;
+											 	$name = $primary_focus_area->name;
 												$slug = $primary_focus_area->slug; 
 												$url = esc_url( add_query_arg( 'focus-area', $slug ) ); ?>
 

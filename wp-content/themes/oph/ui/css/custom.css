@@ -1272,3 +1272,18 @@ a.backlink-arrow img {
   color: #445277;
   text-decoration: underline;
 }
+
+.block-feed-post .block-feed-post__head.focus_color_pink::after,
+.block-feed-post .block-feed-post__head.focus_color_green::after,
+.block-feed-post .block-feed-post__head.focus_color_blue::after {
+  box-shadow: unset;
+}
+.block-feed-post .block-feed-post__head.focus_color_pink {
+  background-color: #efe4eb;
+}
+.block-feed-post .block-feed-post__head.focus_color_green {
+  background-color: #e3efee;
+}
+.block-feed-post .block-feed-post__head.focus_color_blue {
+  background-color: #d9e6ed;
+}
