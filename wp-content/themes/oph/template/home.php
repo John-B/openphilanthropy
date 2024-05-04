@@ -42,10 +42,12 @@ $homepage_research_title = get_field('homepage_research_title');
 						$focus_area = get_the_terms($grant_post->ID, 'focus-area');
 
 						$grant_image = '';
-
+						$primary_term = '';
+						$primary_term = get_post_meta($grant_post->ID, '_yoast_wpseo_primary_focus-area', true);
+						$term = $primary_term ?: $focus_area[0]->term_id;
 						// Get category image
 						if (!empty($focus_area) && $focus_area[0]->term_id) {
-							$grant_image = get_field('category_focus_areas_image', 'focus-area_' . $focus_area[0]->term_id)['sizes']['thumbnail'];
+							$grant_image = get_field('category_focus_areas_image', 'focus-area_' . $term)['sizes']['thumbnail'];
 						}
 
 						// If category image found get url
