@@ -45,11 +45,11 @@ $homepage_research_title = get_field('homepage_research_title');
 
 						// Get category image
 						if (!empty($focus_area) && $focus_area[0]->term_id) {
-							$grant_image = get_field('category_focus_areas_image', 'focus-area_' . $focus_area[0]->term_id);
+							$grant_image = get_field('category_focus_areas_image', 'focus-area_' . $focus_area[0]->term_id)['sizes']['thumbnail'];
 						}
 
 						// If category image found get url
-						if (!empty($grant_image && $grant_image['sizes'] && $grant_image['sizes']['lg'])) {
+						else  if (isset($grant_image['sizes']['lg'])) {
 							$grant_image = $grant_image['sizes']['lg'];
 						}
 
@@ -66,29 +66,33 @@ $homepage_research_title = get_field('homepage_research_title');
 						);
 
 						$grant_description = excerpt($grant_excerpt);
-					}
+					} else {
 
-					if ($grant['description']) {
+			  		  if ($grant['description']) {
 						$grant_description = $grant['description'];
-					}
+					  }
 
-					if ($grant['image']) {
+					  if ($grant['image']) {
 						$grant_image = $grant['image']['sizes']['lg'];
-					}
+					  }
 
-					if ($grant['link']) {
+					  if ($grant['link']) {
 						$grant_link = $grant['link']['url'];
-					}
+					  }
 
-					if ($grant['title']) {
+					  if ($grant['title']) {
 						$grant_title = $grant['title'];
+					  }
+					}
+					if(is_array($grant_image)) {
+					  $grant_image = $grant_image[0];
 					}
 					?>
 
 					<?php if ($grant_title) : ?>
 						<li>
 							<a href="<?php echo $grant_link; ?>">
-								<?php if (is_array($grant_image)) : ?>
+								<?php if (isset($grant_image)) : ?>
 									<div class="bucket-image">
 										<div class="bucket-image__bg">
 											<img src="<?php echo $grant_image; ?>" alt="<?php echo $focus_area; ?>">
