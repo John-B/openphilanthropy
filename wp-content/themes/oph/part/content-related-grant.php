@@ -39,7 +39,7 @@ $eyebrow_link = get_field('custom_eyebrow_link', $related->ID) ? get_field('cust
 
 <li>
     <h5>
-        <a href="<?php echo $eyebrow_link; ?>"><?php echo $eyebrow_copy; ?></a>
+        <a href="/<?php echo $eyebrow_link; ?>"><?php echo $eyebrow_copy; ?></a>
     </h5>
 
     <h4>
