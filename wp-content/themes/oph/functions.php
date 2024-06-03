@@ -52,7 +52,6 @@ function oph_content_width() {
 
 add_action( 'after_setup_theme', 'oph_content_width', 0 );
 
-require get_template_directory() . '/inc/help-text.php';
 require get_template_directory() . '/inc/private-function.php';
 require get_template_directory() . '/inc/template-function.php';
 require get_template_directory() . '/inc/asset.php';
