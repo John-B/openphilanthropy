@@ -14,7 +14,6 @@ if ( ! function_exists( 'oph_setup' ) ) {
 	function oph_setup() {
 		load_theme_textdomain( 'oph', get_template_directory() . '/languages' );
 
-		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'title-tag' );
@@ -27,7 +26,9 @@ if ( ! function_exists( 'oph_setup' ) ) {
 			'search-form'
 		) );
 
-		register_nav_menus( array(
+                add_filter( 'feed_links_show_comments_feed', '__return_false' );
+
+                register_nav_menus( array(
 			'accessory' => esc_html__( 'Accessory', 'oph' ),
 			'footer' => esc_html__( 'Footer', 'oph' ),
 			'primary' => esc_html__( 'Primary', 'oph' ),
@@ -51,6 +52,7 @@ function oph_content_width() {
 
 add_action( 'after_setup_theme', 'oph_content_width', 0 );
 
+require get_template_directory() . '/inc/help-text.php';
 require get_template_directory() . '/inc/private-function.php';
 require get_template_directory() . '/inc/template-function.php';
 require get_template_directory() . '/inc/asset.php';
