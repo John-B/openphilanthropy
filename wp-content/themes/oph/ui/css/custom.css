@@ -1270,7 +1270,7 @@ a.backlink-arrow img {
 
 .page-template-team a {
   color: #445277;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .block-feed-post .block-feed-post__head.focus_color_pink::after,
