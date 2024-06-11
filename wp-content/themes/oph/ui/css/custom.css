@@ -1273,6 +1273,10 @@ a.backlink-arrow img {
   color: #445277;
   text-decoration: none;
 }
+.page-template-team details a {
+  color: #445277;
+  text-decoration: underline;
+}
 
 .block-feed-post .block-feed-post__head.focus_color_pink::after,
 .block-feed-post .block-feed-post__head.focus_color_green::after,
