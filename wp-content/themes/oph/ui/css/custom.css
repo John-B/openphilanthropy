@@ -1268,7 +1268,8 @@ a.backlink-arrow img {
   display: none;
 }
 
-.page-template-team a {
+.page-template-team #primary_menu a,
+.page-template-team h4 a {
   color: #445277;
   text-decoration: none;
 }
