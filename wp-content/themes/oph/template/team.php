@@ -79,8 +79,9 @@
                                                      if($tax_term->term_id === $term->term_id) { // Without this we end up printing posts or the term AND its parent term.
                                                         $team_title = get_field( 'team_title' );
                                                         $team_content = get_the_content();
+                                                        $team_image = get_the_post_thumbnail();
                                                         // Uncomment to skip lazy loading.
-                                                        //  $team_image = str_replace('lazy', 'skip-lazy', get_the_post_thumbnail());
+                                                        // $team_image = str_replace('lazy', 'skip-lazy', get_the_post_thumbnail());
 
                                                 ?>
 
