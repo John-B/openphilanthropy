@@ -173,3 +173,70 @@ function taxonomy_organization_name() {
 }
 
 add_action( 'init', 'taxonomy_organization_name' );
+
+/**
+ * Taxonomy: Teams
+ */
+function taxonomy_teams() {
+    $labels = array(
+        'name'              => _x( 'Team Membership (check only one)', 'taxonomy general name', 'oph' ),
+        'singular_name'     => _x( 'Team', 'taxonomy singular name', 'oph' ),
+        'add_new_item'      => __( 'Add New Team', 'oph' ),
+        'all_items'         => __( 'All Teams', 'oph' ),
+        'edit_item'         => __( 'Edit Team', 'oph' ),
+        'menu_name'         => __( 'Teams', 'oph' ),
+        'new_item_name'     => __( 'New Focus Team', 'oph' ),
+        'parent_item'       => __( 'Parent Team', 'oph' ),
+        'parent_item_colon' => __( 'Parent Team:', 'oph' ),
+        'search_items'      => __( 'Search Teamss', 'oph' ),
+        'update_item'       => __( 'Update Team', 'oph' )
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'hierarchical'       => true,
+        'meta_box_cb'        => 'post_categories_meta_box',
+        'public'             => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'teams' ),
+        'show_in_quick_edit' => true,
+        'show_ui'            => true,
+        'show_admin_column'  => true
+    );
+
+    register_taxonomy( 'teams', ['team'], $args );
+}
+
+add_action( 'init', 'taxonomy_teams' );
+
+
+/**
+ * Prevent Teams metabox from losing hierarchy when an item is selected.
+ */
+function ya_disable_popular_ontop($args) {
+   //If this is your required taxonomy then disable the popular on top.
+    if($args['taxonomy'] == 'teams'){
+        $args['checked_ontop'] = false;
+    }
+    return $args;
+}
+add_filter('wp_terms_checklist_args','ya_disable_popular_ontop');
+
+/**
+ * Removes custom category "teams" to be selectable as a primary term.
+ *
+ * @param array  $taxonomies     The current taxonomies that can be used as a primary term.
+ * @param string $post_type      The current post type.
+ * @param array  $all_taxonomies All registered taxonomies.
+ *
+ * @return mixed The taxonomies that can be used as primary terms.
+ */
+function remove_primary_term_taxonomies( $taxonomies, $post_type, $all_taxonomies ) {
+    if ( isset( $taxonomies['teams'] ) ) {
+        unset( $taxonomies['teams'] );
+    }
+
+    return $taxonomies;
+}
+
+add_filter( 'wpseo_primary_term_taxonomies', 'remove_primary_term_taxonomies', 11, 3 );
