@@ -1271,16 +1271,6 @@ a.backlink-arrow img {
   display: none;
 }
 
-.page-template-team #primary_menu a,
-.page-template-team h4 a {
-  text-decoration: none;
-}
-.page-template-team details a {
-  font-weight: normal;
-  color: inherit;
-  text-decoration: underline;
-}
-
 .block-feed-post .block-feed-post__head.focus_color_pink::after,
 .block-feed-post .block-feed-post__head.focus_color_green::after,
 .block-feed-post .block-feed-post__head.focus_color_blue::after {

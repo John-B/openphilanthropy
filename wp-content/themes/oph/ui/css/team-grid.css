@@ -1,3 +1,12 @@
+.page-template-team #primary_menu a,
+.page-template-team h4 a {
+  text-decoration: none;
+}
+.page-template-team details a {
+  font-weight: normal;
+  color: inherit;
+  text-decoration: underline;
+}
 .page-template-team .mfp-inline-holder .mfp-content,
 .page-template-team-modal .mfp-inline-holder .mfp-content {
   background: white;

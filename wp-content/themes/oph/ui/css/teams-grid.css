@@ -1,3 +1,12 @@
+.page-template-teams #primary_menu a,
+.page-template-teams h4 a {
+  text-decoration: none;
+}
+.page-template-teams details a {
+  font-weight: normal;
+  color: inherit;
+  text-decoration: underline;
+}
 @media only screen and (min-width: 1024px) {
   .page-template-teams #team .content-single__main {
     width: 100%;
