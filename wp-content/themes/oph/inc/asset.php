@@ -13,6 +13,8 @@ function enqueue_asset() {
 
 	wp_enqueue_style( 'team-style', get_template_directory_uri() . '/ui/css/team-grid.css', array(), '1.0.0' );
 
+	wp_enqueue_style( 'teams-style', get_template_directory_uri() . '/ui/css/teams-grid.css', array(), '1.0.0' );
+
 	wp_enqueue_script( 'jquery-bundle-script', get_template_directory_uri() . '/ui/js/jquery.bundle.js', array( 'jquery' ), '', true );
 
 	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/ui/js/main.js', array( 'jquery', 'js-cookie' ), '1.1.1', true );

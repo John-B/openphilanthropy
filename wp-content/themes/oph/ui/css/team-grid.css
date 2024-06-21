@@ -1,181 +1,3 @@
-/* Work on TOC */
-#team .entry-content a {
-  font-weight: 800;
-  text-decoration: none;
-  color: unset;entry-content a {
-  font-weight: unset;
-  text-decoration: none;
-}entry-content a {
-  font-weight: unset;
-  text-decoration: none;
-}entry-content a {
-  font-weight: unset;
-  text-decoration: none;
-}entry-content a {
-  font-weight: unset;
-  text-decoration: none;
-}
-}
-@media only screen and (min-width: 1024px) {
-  #team .content-single__main {
-    width: 100%;
-    max-width: 976px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  #team .content-single__main {
-    margin-left: unset;
-    width: 100%;
-    max-width: 976px;
-  }
-}
-/* Add dark background boxes */
-.team-grid .team-item summary {
-  position: absolute;
-  list-style: none;
-  margin-top: -24px;
-  width: 24px;
-  right: 15px;
-}
-.team-grid .team-item details[open] summary::before, 
-.team-grid .team-item details summary::before { 
-    display: none;
-}
-.team-grid .team-item details[open] summary::after { 
-    content:""; 
-    color: grey; 
-    position: absolute;
-    top: -12px;
-    left: 0;
-    width: 32px;
-    height: 24px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16"><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/></svg>');
-    filter: invert(98%) sepia(16%) saturate(296%) hue-rotate(92deg) brightness(95%) contrast(94%);
-}
-.team-grid .team-item details summary::after {
-    content:""; 
-    color: grey;
-    position: absolute;
-    top: -12px;
-    left: 0;
-    width: 24px;
-    height: 24px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/></svg>');
-    filter: invert(98%) sepia(16%) saturate(296%) hue-rotate(92deg) brightness(95%) contrast(94%);
-}
-/* Deal with messed up markup in items. */
-.team-grid .team-item details p:empty {
-  padding: 0;
-  height: 0;
-  margin: 0;
-}
-.team-grid .team-item-header h4 {
-  color: white;
-}
-.team-grid .team-item-header h6 {
-  color: #b2cce5;
-}
-.team-grid {
-  margin-bottom: 30px;
-}
-.team-grid .team-item-header {
-  margin-bottom: 0;
-  padding-top: 15px;
-  height: 140px;
-}
-
-@media only screen and (min-width: 1900px) {
-  .toc {
-    position: fixed;  
-    top: 160px;
-    left: 20px;
-    max-width: 300px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-  }
-  .toc::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-  }
-}
-.toc a {
-  font-weight: unset;
-  font-size: 22px;
-}
-.team-flex {
-	display: flex;
-	flex-flow: row;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-        margin: 10px 0;
-}
-.team-flex article {
-	text-align: center;
-	min-height: 105px;
-	flex-basis: auto;
-	width: 98%;
-}
-.content-team {
-    padding: 0;
-}
-
-@media only screen and (min-width: 576px) {
-    .content-team {
-        padding: 0;
-    }
-}
-.team-hero.hero .hero-image-wrap::before {
-  display: none;
-}
-.team-hero.hero .hero-slider__image {
-    height: fit-content;
-}
-.team-hero.hero .hero-slider__image img {
-  object-fit: cover;
-  height: auto;
-  max-height: 605px;
-}
-.team-hero.hero {
-  filter: unset;
-}
-.team-hero.hero::before {
-  display: none;
-}
-@media only screen and (min-width: 1024px) {
-    .team-hero.hero {
-        height: fit-content;
-    }
-    .team-hero.hero .hero-slider__image {
-        height: auto;
-    }
-}
-@media only screen and (min-width: 768px) {
-    .team-hero.hero {
-        height: fit-content;
-    }
-    .team-hero.hero .hero-slider__image {
-        height: auto;
-    }
-    .page-template-hierarchy .content-team {
-      padding: 0 0 50px;
-    }
-}
-.page-template-hierarchy-toc  h3,
-.page-template-hierarchy  h3  {
-  margin: 0 0 0 20px;
-  font-weight: 400;
-}
-.page-template-hierarchy-toc h2,
-.page-template-hierarchy h2  {
-  margin: 0 0 0 0;
-}
-.page-template-hierarchy .toc h3 {
-  line-height: 1;
-  margin: 20px 0 0 20px;
-}
 .page-template-team .mfp-inline-holder .mfp-content,
 .page-template-team-modal .mfp-inline-holder .mfp-content {
   background: white;
@@ -189,26 +11,19 @@
 .page-template-team-modal .mfp-inline-holder .mfp-close {
   font-size: 32px;
 }
-.team-item .open-popup-link {
+.page-template-team .team-item .open-popup-link {
   color: gray;
   font-size: 25px;
   margin: 0px 5px -5px -25px;
 }
-.team-grid {
+.page-template-team .team-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
-  grid-row-gap: 15px;
 }
 
 @media only screen and (min-width: 768px) {
-  .team-flex article {
-	text-align: center;
-	min-height: 105px;
-	flex-basis: auto;
-	width: 48%;
-  }
-  .team-grid {
+  .page-template-team .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -222,13 +37,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
- .team-flex article {
-	text-align: center;
-	min-height: 105px;
-	flex-basis: auto;
-	width: 32%;
-  }
- .team-grid {
+  .page-template-team .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
@@ -237,66 +46,43 @@
   }
 }
 
-.team-grid article.team-item {
+.page-template-team .team-grid article {
   text-align: center;
   min-height: 105px;
-  background-color: #445277;
-  color: white;
-}
-.team-grid .team-item div.team-item-content p,
-.team-grid .team-item:has(details[open]),
-.team-grid .team-item details,
-.team-grid .team-item-header {
-  background-color: #445277;
-  color: white;
-}
-.team-grid .team-item details p {
-  padding: 15px 15px 0;
-  background-color: #445277;
-  color: white;
 }
 
-.team-flex article aside,
-.team-grid article aside {
+.page-template-team .team-grid article aside {
   display: none;
   text-align: center;
 }
 
-.team-flex article:hover aside,
-.team-grid article:hover aside {
+.page-template-team .team-grid article:hover aside {
   display: block;
 }
 
-.team-item-header {
+.page-template-team .team-item-header {
   position: relative;
   height: 96px;
 }
 
-.team-flex h4,
-.team-flex a h4,
-.team-grid h4,
-.team-grid a h4 {
+.page-template-team .team-grid h4,
+.page-template-team .team-grid a h4 {
   margin: 12px 0 4px;
   color: #445277;
   font-size: 20px;
   font-weight: 800;
   line-height: 28px;
 }
-.team-flex a:hover,
-.team-flex a:focus,
-.team-grid a:hover,
-.team-grid a:focus {
+.page-template-team .team-grid a:hover,
+.page-template-team .team-grid a:focus {
   text-decoration: underline;
 }
-.team-flex a.open-popup-link:hover,
-.team-flex a.open-popup-link:focus,
-.team-grid a.open-popup-link:hover,
-.team-grid a.open-popup-link:focus {
+.page-template-team .team-grid a.open-popup-link:hover,
+.page-template-team .team-grid a.open-popup-link:focus {
   text-decoration: none;
 }
 
-.team-flex h6,
-.team-grid h6 {
+.page-template-team .team-grid h6 {
   margin: 0 auto 8px;
   color: #000;
   font-size: 14px;
@@ -307,26 +93,12 @@
   max-width: 100%;
   padding: 0 30px;
 }
-.page-template-hierarchy-toc .team-flex h6,
-.page-template-hierarchy-toc .team-grid h6 {
-  margin: 0 auto 8px;
-  color: #000;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 18px;
-  text-transform: uppercase;
-  max-width: 100%;
-  padding: 0 30px;
-}
 @media only screen and (max-width: 350px) {
-  .team-flex h6,
-  .team-grid h6 {
+  .page-template-team .team-grid h6 {
     letter-spacing: 0;
   }
 }
-.team-flex svg,
-.team-grid svg {
+.page-template-team .team-grid svg {
   width: 35px;
   height: 16px;
   transition: all 0.15s ease-out;
@@ -335,57 +107,43 @@
   vertical-align: top;
 }
 
-.team-flex img,
-.team-grid img {
-  width: 220px;
-  height: 220px;
+.page-template-team .team-grid img {
+  width: 276px;
+  height: 276px;
   border-radius: 50%;
   object-fit: cover;
-  margin: auto;
 }
 
-.team-flex .grid-team__icon,
-.team-grid .grid-team__icon {
+.page-template-team .team-grid .grid-team__icon {
   margin-top: 10px;
   left: 0;
   position: relative;
   right: 0;
 }
 
-.team-item {
+.page-template-team .team-item {
   position: relative;
 }
-.team-item details {
-  position: relative;
-  text-align: left;
-  display: flex;
+.page-template-team .team-item details {
+    position: relative;
+    text-align: left;
 }
-.team-item div.team-item-content p,
-.team-item details p {
+.page-template-team .team-item details p {
   position: relative;
   text-align: left;
   z-index: 999;
   background: white;
   padding: 0.5em 5px 0.5em 5px;
 }
-.page-template-hierarchy-toc .team-item div.team-item-content p,
-.page-template-hierarchy-toc .team-item details p {
-  position: relative;
-  text-align: left;
-  z-index: 999;
-  background: white;
-  padding: 0.5em 10px 0.5em 10px;
-  line-height: 20px
-}
-.team-item summary {
+.page-template-team .team-item summary {
   position: absolute;
   list-style: none;
   margin-top: -24px;
 }
-.team-item summary::-webkit-details-marker {display: none; }
+.page-template-team .team-item summary::-webkit-details-marker {display: none; }
 
 /* By using [open] we can define different styles when the disclosure widget is open */
-.team-item details[open] summary::before { 
+.page-template-team .team-item details[open] summary::before { 
     content:""; 
     color: grey; 
     position: absolute;
@@ -396,7 +154,7 @@
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16"><path fill="currentColor" stroke="currentColor" fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>');
     filter: invert(49%) sepia(16%) saturate(296%) hue-rotate(184deg) brightness(95%) contrast(94%);
 }
-.team-item details summary::before {
+.page-template-team .team-item details summary::before {
     content:""; 
     color: grey;
     position: absolute;
@@ -407,7 +165,7 @@
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill="currentColor" stroke="currentColor" fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
     filter: invert(49%) sepia(16%) saturate(296%) hue-rotate(184deg) brightness(95%) contrast(94%);
 }
-.cta-button {
+.page-template-team .cta-button {
   z-index: 0;
   position: relative;
 }

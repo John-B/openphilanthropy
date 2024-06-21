@@ -3,7 +3,7 @@
 	$call_to_action_button_team = get_field( 'call_to_action_button_team' ); 
 ?>
 
-<?php if ( is_page_template( 'template/team.php' ) ) { ?>
+<?php if ( is_page_template( 'template/team.php' || is_page_template( 'template/teams.php' ) ) ) { ?>
 	<?php if ( ! empty( $call_to_action_button_team ) ) : ?>
 		<div class="cta-button" id="button">
 			<div class="wrap">

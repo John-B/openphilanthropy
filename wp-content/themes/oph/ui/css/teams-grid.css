@@ -1,0 +1,378 @@
+@media only screen and (min-width: 1024px) {
+  .page-template-teams #team .content-single__main {
+    width: 100%;
+    max-width: 976px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .page-template-teams #team .content-single__main {
+    margin-left: unset;
+    width: 100%;
+    max-width: 976px;
+  }
+}
+/* Add dark background boxes */
+.page-template-teams .team-grid .team-item summary {
+  position: absolute;
+  list-style: none;
+  margin-top: -24px;
+  width: 24px;
+  right: 15px;
+}
+.page-template-teams .team-grid .team-item details[open] summary::before, 
+.page-template-teams .team-grid .team-item details summary::before { 
+    display: none;
+}
+.page-template-teams .team-grid .team-item details[open] summary::after { 
+    content:""; 
+    color: grey; 
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 32px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16"><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/></svg>');
+    filter: invert(98%) sepia(16%) saturate(296%) hue-rotate(92deg) brightness(95%) contrast(94%);
+}
+.page-template-teams .team-grid .team-item details summary::after {
+    content:""; 
+    color: grey;
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/></svg>');
+    filter: invert(98%) sepia(16%) saturate(296%) hue-rotate(92deg) brightness(95%) contrast(94%);
+}
+/* Deal with messed up markup in items. */
+.page-template-teams .team-grid .team-item details p:empty {
+  padding: 0;
+  height: 0;
+  margin: 0;
+}
+.page-template-teams .team-grid .team-item-header h4 {
+  color: white;
+}
+.page-template-teams .team-grid .team-item-header h6 {
+  color: #b2cce5;
+}
+.page-template-teams .team-grid {
+  margin-bottom: 30px;
+}
+.page-template-teams .team-grid .team-item-header {
+  margin-bottom: 0;
+  padding-top: 15px;
+  height: 140px;
+}
+
+.page-template-teams .team-flex {
+	display: flex;
+	flex-flow: row;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+        margin: 10px 0;
+}
+.page-template-teams .team-flex article {
+	text-align: center;
+	min-height: 105px;
+	flex-basis: auto;
+	width: 98%;
+}
+.page-template-teams .content-team {
+    padding: 0;
+}
+
+@media only screen and (min-width: 576px) {
+    .page-template-teams .content-team {
+        padding: 0;
+    }
+}
+.team-hero.hero .hero-image-wrap::before {
+  display: none;
+}
+.team-hero.hero .hero-slider__image {
+    height: fit-content;
+}
+.team-hero.hero .hero-slider__image img {
+  object-fit: cover;
+  height: auto;
+  max-height: 605px;
+}
+.team-hero.hero {
+  filter: unset;
+}
+.team-hero.hero::before {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+    .team-hero.hero {
+        height: fit-content;
+    }
+    .team-hero.hero .hero-slider__image {
+        height: auto;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .team-hero.hero {
+        height: fit-content;
+    }
+    .team-hero.hero .hero-slider__image {
+        height: auto;
+    }
+    .page-template-hierarchy .content-team {
+      padding: 0 0 50px;
+    }
+}
+.page-template-hierarchy-toc  h3,
+.page-template-hierarchy  h3  {
+  margin: 0 0 0 20px;
+  font-weight: 400;
+}
+.page-template-hierarchy-toc h2,
+.page-template-hierarchy h2  {
+  margin: 0 0 0 0;
+}
+.page-template-hierarchy .toc h3 {
+  line-height: 1;
+  margin: 20px 0 0 20px;
+}
+.page-template-teams #team h2 {
+  margin-top: 50px;
+}
+.page-template-teams .mfp-inline-holder .mfp-content,
+.page-template-teams-modal .mfp-inline-holder .mfp-content {
+  background: white;
+  width: 90%;
+  padding: 1em;
+  max-width: 500px;
+  box-shadow: 2px 2px 2px grey;
+  border: 1px solid grey;
+}
+.page-template-teams .mfp-inline-holder .mfp-close,
+.page-template-teams-modal .mfp-inline-holder .mfp-close {
+  font-size: 32px;
+}
+.page-template-teams .team-item .open-popup-link {
+  color: gray;
+  font-size: 25px;
+  margin: 0px 5px -5px -25px;
+}
+.page-template-teams .team-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-row-gap: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-template-teams .team-flex article {
+	text-align: center;
+	min-height: 105px;
+	flex-basis: auto;
+	width: 48%;
+  }
+  .page-template-teams .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 30px;
+  }
+  .page-template-teams .mfp-inline-holder .mfp-content {
+    width: 80%;
+    padding: 2em 2em 1em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-template-teams .team-flex article {
+	text-align: center;
+	min-height: 105px;
+	flex-basis: auto;
+	width: 32%;
+  }
+  .page-template-teams .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+  }
+}
+
+.page-template-teams .team-grid article.team-item {
+  text-align: center;
+  min-height: 105px;
+  color: white;
+}
+.page-template-teams .team-grid .team-item div.team-item-content p,
+.page-template-teams .team-grid .team-item:has(details[open]),
+.page-template-teams .team-grid .team-item details,
+.page-template-teams .team-grid .team-item-header {
+  background-color: #445277;
+  color: white;
+}
+.page-template-teams .team-grid .team-item details p {
+  padding: 15px 15px 0;
+  background-color: #445277;
+  color: white;
+}
+
+.page-template-teams .team-flex article aside,
+.page-template-teams .team-grid article aside {
+  display: none;
+  text-align: center;
+}
+
+.page-template-teams .team-flex article:hover aside,
+.page-template-teams .team-grid article:hover aside {
+  display: block;
+}
+
+.page-template-teams .team-item-header {
+  position: relative;
+  height: 96px;
+}
+
+.page-template-teams .team-flex h4,
+.page-template-teams .team-flex a h4,
+.page-template-teams .team-grid h4,
+.page-template-teams .team-grid a h4 {
+  margin: 12px 0 4px;
+  color: #445277;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+}
+.page-template-teams .team-flex a:hover,
+.page-template-teams .team-flex a:focus,
+.page-template-teams .team-grid a:hover,
+.page-template-teams .team-grid a:focus {
+  text-decoration: underline;
+}
+.page-template-teams .team-flex a.open-popup-link:hover,
+.page-template-teams .team-flex a.open-popup-link:focus,
+.page-template-teams .team-grid a.open-popup-link:hover,
+.page-template-teams .team-grid a.open-popup-link:focus {
+  text-decoration: none;
+}
+
+.page-template-teams .team-flex h6,
+.page-template-teams .team-grid h6 {
+  margin: 0 auto 8px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 22px;
+  text-transform: uppercase;
+  max-width: 100%;
+  padding: 0 30px;
+}
+.page-template-hierarchy-toc .team-flex h6,
+.page-template-hierarchy-toc .team-grid h6 {
+  margin: 0 auto 8px;
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 18px;
+  text-transform: uppercase;
+  max-width: 100%;
+  padding: 0 30px;
+}
+@media only screen and (max-width: 350px) {
+  .page-template-teams .team-flex h6,
+  .page-template-teams .team-grid h6 {
+    letter-spacing: 0;
+  }
+}
+.page-template-teams .team-flex svg,
+.page-template-teams .team-grid svg {
+  width: 35px;
+  height: 16px;
+  transition: all 0.15s ease-out;
+  max-width: 100%;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.page-template-teams .team-flex img,
+.page-template-teams .team-grid img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: auto;
+}
+
+.page-template-teams .team-flex .grid-team__icon,
+.page-template-teams .team-grid .grid-team__icon {
+  margin-top: 10px;
+  left: 0;
+  position: relative;
+  right: 0;
+}
+
+.page-template-teams .team-item {
+  position: relative;
+}
+.page-template-teams .team-item details {
+  position: relative;
+  text-align: left;
+  display: flex;
+}
+.page-template-teams .team-item div.team-item-content p,
+.page-template-teams .team-item details p {
+  position: relative;
+  text-align: left;
+  z-index: 999;
+  background: white;
+  padding: 0.5em 5px 0.5em 5px;
+}
+.page-template-hierarchy-toc .team-item div.team-item-content p,
+.page-template-hierarchy-toc .team-item details p {
+  position: relative;
+  text-align: left;
+  z-index: 999;
+  background: white;
+  padding: 0.5em 10px 0.5em 10px;
+  line-height: 20px
+}
+.page-template-teams .team-item summary {
+  position: absolute;
+  list-style: none;
+  margin-top: -24px;
+}
+.page-template-teams .team-item summary::-webkit-details-marker {display: none; }
+
+/* By using [open] we can define different styles when the disclosure widget is open */
+.page-template-teams .team-item details[open] summary::before { 
+    content:""; 
+    color: grey; 
+    position: absolute;
+    top: -70px;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16"><path fill="currentColor" stroke="currentColor" fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>');
+    filter: invert(49%) sepia(16%) saturate(296%) hue-rotate(184deg) brightness(95%) contrast(94%);
+}
+.page-template-teams .team-item details summary::before {
+    content:""; 
+    color: grey;
+    position: absolute;
+    top: -70px;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill="currentColor" stroke="currentColor" fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+    filter: invert(49%) sepia(16%) saturate(296%) hue-rotate(184deg) brightness(95%) contrast(94%);
+}
+.page-template-teams .cta-button {
+  z-index: 0;
+  position: relative;
+}
