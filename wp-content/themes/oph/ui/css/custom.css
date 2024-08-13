@@ -1285,3 +1285,13 @@ a.backlink-arrow img {
 .block-feed-post .block-feed-post__head.focus_color_blue {
   background-color: #d9e6ed;
 }
+.entry-content li  ul > li::before,
+.section-content .section-content__entry li ul > li::before {
+	content: "\25CB";
+	margin-right: 12px;
+	width: 8px;
+	font-size: 8px;
+	color: #000;
+	font-weight: 400;
+	display: inline-block;
+}
