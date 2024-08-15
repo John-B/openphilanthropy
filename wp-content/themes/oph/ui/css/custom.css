@@ -1227,7 +1227,7 @@ span.checked-box:after {
   text-align: left;
   transition: all 0.25s ease-out;
   vertical-align: middle;
-  width: 100%;
+  øwidth: 100%;
   z-index: 10;
 }
 .sidebar-filter .sidebar-filter__search input[type="search"]::placeholder {
@@ -1287,11 +1287,47 @@ a.backlink-arrow img {
 }
 .entry-content li  ul > li::before,
 .section-content .section-content__entry li ul > li::before {
-	content: "\25CB";
-	margin-right: 12px;
-	width: 8px;
-	font-size: 8px;
-	color: #000;
-	font-weight: 400;
-	display: inline-block;
+  content: "\25CB";
+  margin-right: 12px;
+  width: 8px;
+  font-size: 8px;
+  color: #000;
+  font-weight: 400;
+  display: inline-block;
+}
+#expressions-of-interest svg {
+  margin-left: 8px;
+  width: 23px;
+  height: 16px;
+}
+#expressions-of-interest > li {
+  list-style: none;
+  margin-bottom: 32px;
+  padding-left: 20px;
+  border-left: 4px solid #e8eaf1;
+}
+ul#expressions-of-interest {
+  padding-left: 0;
+}
+#expressions-of-interest li:before {
+  display: none;
+}
+#expressions-of-interest .application-link {
+  font-weight: 400;
+  display: inline-flex;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+  align-items: center;
+}
+#expressions-of-interest .application-link:hover {
+  color: #6e7ca0;
+}
+#expressions-of-interest li h3 a,
+#expressions-of-interest  li h3 {
+	margin: 0 0 4px;
+	font-size: 20px;
+	font-weight: 800;
+	line-height: 28px;
+        text-decoration: none;
 }
