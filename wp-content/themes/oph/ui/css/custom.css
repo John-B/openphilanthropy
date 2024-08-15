@@ -1331,3 +1331,7 @@ ul#expressions-of-interest {
 	line-height: 28px;
         text-decoration: none;
 }
+.content-careers .content-careers__entry .careers-positions,
+.content-careers .content-careers__section {
+  border-top: unset !important;
+}
