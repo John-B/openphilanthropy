@@ -5,7 +5,7 @@
 
 <?php if ( is_page_template( 'template/team.php' || is_page_template( 'template/teams.php' ) ) ) { ?>
 	<?php if ( ! empty( $call_to_action_button_team ) ) : ?>
-		<div class="cta-button" id="button">
+		<div class="cta-button" id="button" style="display: none;">
 			<div class="wrap">
 				<div class="cta-button__content">
 					<div class="button-group">
