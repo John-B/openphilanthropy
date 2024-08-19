@@ -1335,3 +1335,7 @@ ul#expressions-of-interest {
 .content-careers .content-careers__section {
   border-top: unset !important;
 }
+.page-template-team .cta-button,
+.page-template-teams .cta-button {
+  display: none;
+}
