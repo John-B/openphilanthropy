@@ -1500,38 +1500,38 @@ jQuery(function ($) {
   /**
    * Bucket description icon.
    */
-  $(document).ready(function () {
-    var bucketDescriptionText = $(".bucket-description");
+//  $(document).ready(function () {
+//    var bucketDescriptionText = $(".bucket-description");
 
-    bucketDescriptionText.each(function () {
-      var appendParent = $(this);
+//    bucketDescriptionText.each(function () {
+//      var appendParent = $(this);
 
-      if ($(this).find("p").length) {
-        appendParent = $(this).find("p").last();
-      }
+//      if ($(this).find("p").length) {
+//        appendParent = $(this).find("p").last();
+//      }
 
-      var bucketDescriptionHref = $(this).closest("li").find("a").attr("href");
-      var bucketDescriptionIcon = $(
-        '<svg aria-hidden="true" class="bucket-description-arrow" viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26.55 1L34 8.5 26.55 16M0 8.5h34" stroke="#6e7ca0" stroke-width="2"/></svg>'
-      );
+//      var bucketDescriptionHref = $(this).closest("li").find("a").attr("href");
+//      var bucketDescriptionIcon = $(
+//        '<svg aria-hidden="true" class="bucket-description-arrow" viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26.55 1L34 8.5 26.55 16M0 8.5h34" stroke="#6e7ca0" stroke-width="2"/></svg>'
+//      );
 
-      if ($(this).closest("ul").attr("data-arrows-small") == "true") {
-        bucketDescriptionIcon = $(
-          '<svg viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.352 1l7.395 7.5-7.395 7.5M1 8.397l21.748.103" stroke="#6e7ca0" stroke-width="2"/></svg>'
-        );
-      }
+//      if ($(this).closest("ul").attr("data-arrows-small") == "true") {
+//        bucketDescriptionIcon = $(
+//          '<svg viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.352 1l7.395 7.5-7.395 7.5M1 8.397l21.748.103" stroke="#6e7ca0" stroke-width="2"/></svg>'
+//        );
+//      }
 
-      appendParent.append(
-        $(
-          '<span class="keep-together">&nbsp;<a class="bucket-description-link" href="' +
-          bucketDescriptionHref +
-          '"></a></span>'
-        )
-      );
+//      appendParent.append(
+//        $(
+//          '<span class="keep-together">&nbsp;<a class="bucket-description-link" href="' +
+//          bucketDescriptionHref +
+//          '"></a></span>'
+//        )
+//      );
 
-      $(this).find(".bucket-description-link").append(bucketDescriptionIcon);
-    });
-  });
+//      $(this).find(".bucket-description-link").append(bucketDescriptionIcon);
+//    });
+//  });
 
   /**
    * Set icon in Select2 button.

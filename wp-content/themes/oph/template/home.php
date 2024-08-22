@@ -67,7 +67,11 @@ $homepage_research_title = get_field('homepage_research_title');
 							'source' => $grant_excerpt_source
 						);
 
-						$grant_description = excerpt($grant_excerpt);
+						if ($grant['description']) {
+						  $grant_description = $grant['description'];
+					  	} else {
+						  $grant_description = excerpt($grant_excerpt);
+						}
 					} else {
 
 			  		  if ($grant['description']) {
