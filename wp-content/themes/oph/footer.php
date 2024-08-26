@@ -94,7 +94,7 @@
 								<?php endif; ?>
 
 								<p class="copyright">
-									<span>&copy; Open Philanthropy 2022</span>
+									<span>&copy; Open Philanthropy <?php echo date('Y'); ?></span>
 									<span class="br"></span>
 									<span><em>Except where otherwise noted, this work is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons Attribution-Noncommercial 4.0&nbsp;International License.</a></em></span>
 									<span class="br"></span>
