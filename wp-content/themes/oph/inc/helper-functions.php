@@ -63,6 +63,30 @@ function generate_filters( $slug, $type, $tax = false, $allowed = false ) {
           <?php 
           }
         }
+      } else if ($slug == "author") { // name has no square brackets 
+        ?> 
+          <label 
+            for="<?php echo $i; ?>" 
+            class="selection-label"> 
+            <input type="checkbox" 
+              class="selection-input" 
+              data-category="<?php echo $i; ?>" 
+              id="<?php echo $i; ?>" 
+              name="<?php echo $slug; ?>"
+              value="<?php echo $i; ?>" 
+              <?php
+              if ( !empty($params) ) {
+                foreach($params as $param) {
+                  if ( in_array( $i, $param )) {
+                    echo 'checked';
+                  }
+                }
+              }
+              ?> /> 
+            <span class="checked-box"></span>
+            <?php echo $i; ?> 
+          </label> 
+        <?php
       } else {
         ?> 
           <label 
