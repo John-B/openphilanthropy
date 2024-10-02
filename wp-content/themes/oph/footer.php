@@ -98,7 +98,6 @@
 									<span class="br"></span>
 									<span><em>Except where otherwise noted, this work is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons Attribution-Noncommercial 4.0&nbsp;International License.</a></em></span>
 									<span class="br"></span>
-									<span><em>If you'd like to translate this content into another language, please <a href="https://www.openphilanthropy.org/contact-us/">get in touch</a>!</em></span>
 								</p>
 							</div>
 						</div>
