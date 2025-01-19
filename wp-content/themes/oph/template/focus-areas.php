@@ -16,6 +16,9 @@
 
 	$other_links = get_field( 'other_links' );
 	$other_links_title = get_field( 'other_links_title' );
+	$past_grantmaking = get_field( 'past_grantmaking' );
+	$past_grantmaking_title = get_field( 'past_grantmaking_title' );
+
 ?>
 
 <?php get_template_part( 'part/page', 'header' ); ?>
@@ -119,6 +122,33 @@
 
 								<ul>
 									<?php foreach ( $other_links as $link ) : ?>
+										<?php if ( isset($link['link']['url']) ) : ?>
+											<li>
+												<a href="<?php echo $link['link']['url']; ?>">
+													<h4><?php echo $link['link']['title']; ?></h4>
+
+													<div aria-hidden="true" class="other-links__icon">
+														<svg viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26.55 1L34 8.5 26.55 16M0 8.5h34" stroke="#6e7ca0" stroke-width="2"/></svg>
+													</div>
+												</a>
+											</li>
+										<?php endif; ?>
+									<?php endforeach; ?>
+								</ul>
+							<?php endif; ?>
+						</div>
+					</div>
+				<?php endif; ?>
+				<?php if ( $past_grantmaking ) : ?>
+					<div class="other-links">
+						<div class="wrap">
+							<?php if ( $past_grantmaking_title ) : ?>
+								<div class="line-heading">
+									<h2><?php echo $past_grantmaking_title; ?></h2>
+								</div>
+
+								<ul>
+									<?php foreach ( $past_grantmaking as $link ) : ?>
 										<?php if ( isset($link['link']['url']) ) : ?>
 											<li>
 												<a href="<?php echo $link['link']['url']; ?>">
