@@ -1339,3 +1339,49 @@ ul#expressions-of-interest {
 .page-template-teams .cta-button {
   display: none;
 }
+.newsletter-form {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+}
+#mc-embedded-subscribe-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#mce-EMAIL {
+  height: 32px;
+  padding-left: 5px;
+  width: 320px;
+  max-width: 65vw;
+}
+.newsletter-button {
+  color: white !important;
+  font-weight: bold;
+  height: 32px;
+  padding: 0 20px;
+  background-color: #6e7ca0 !important;
+  opacity: 0.9;
+  margin: 0 0 0 -5px;
+  vertical-align: top !important;
+}
+.newsletter-button:hover {
+  opacity: 1;
+}
+#mc-embedded-subscribe-form label {
+  padding: 2px 10px;
+  font-weight: bold;
+}
+@media only screen and (min-width: 1024px) {
+  #footer {
+    padding-top: 40px !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #footer {
+    padding: 56px 0;
+  }
+  #mc-embedded-subscribe-form {
+    flex-direction: column;
+  }
+}

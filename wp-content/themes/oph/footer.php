@@ -13,6 +13,23 @@
 			?>
 
 			<footer id="footer">
+				<div class="newsletter-form">
+					<form action="https://openphilanthropy.us12.list-manage.com/subscribe?u=5f851555ed522f52a8cc7157f&id=204e32798b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+						<label for="mce-EMAIL">Sign up for news about our grants, research, and more:</label>
+						<div class="mc-field-group">
+							<input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+							<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="newsletter-button" value="Subscribe">
+							<input type="hidden" name="tags" value="">
+						</div>
+					        <div id="mce-responses" class="clear">
+							<div class="response" id="mce-error-response" style="display: none;"></div>
+							<div class="response" id="mce-success-response" style="display: none;"></div>
+					        </div>
+						<div style="position: absolute; left: -5000px;" aria-hidden="true">
+							<input type="text" name="b_1e5084b5065fc8cdda0dbe47d_9439f93138" tabindex="-1" value="">
+						</div>
+					</form>
+				</div>
 				<div class="wrap">
 					<div class="footer__content">
 						<div class="footer-grid">
@@ -49,7 +66,8 @@
 
 								<address>
 									<?php echo $mailing_address; ?> 
-								</address>
+				
+				</address>
 
 								<h6>Email</h6>
 

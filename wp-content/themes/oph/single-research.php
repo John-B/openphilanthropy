@@ -209,7 +209,7 @@ $call_to_action_button = get_field('call_to_action_button');
 						<a class="button" href="<?php if(isset($button['link']['url']))  echo $button['link']['url']; ?>"><?php if(isset($button['link']['title'])) echo $button['link']['title']; ?></a>
 					<?php endforeach; ?>
 				<?php else : ?>
-					<a class="button" href="/research">Back to Research &amp; Updates</a>
+					<a class="button" href="https://openphilanthropy.us12.list-manage.com/subscribe?u=5f851555ed522f52a8cc7157f&id=44b73d3262">Subscribe to new blog alerts</a>
 				<?php endif; ?>
 			</div>
 		</div>
