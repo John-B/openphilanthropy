@@ -1710,7 +1710,7 @@ jQuery(function ($) {
   });
 
   // Adds smooth scroll to anchor tags
-  $('a[href*="#"]:not([href="#"]):not([href$="#categories"]):not(.footnote_hard_link)').on(
+  $('a[href*="#"]:not([href="#"]):not([href$="#categories"]):not(.footnote_hard_link):not(.toc-link):not(.toc-sublink)').on(
     "click",
     function () {
       if (

@@ -74,13 +74,15 @@ include get_template_directory() . '/inc/onetime-script.php';
 
 function custom_search_template( $template ) {
   global $wp_query;
-
   $post_type = get_query_var( 'post_type' );
+  $page_name = get_query_var( 'pagename' );
 
   if ( $wp_query->is_search && $post_type == 'grants' ) {
     return locate_template( 'search-grants.php' );
   } elseif ( $wp_query->is_search && $post_type == 'research' ) {
   	return locate_template( 'search-research.php' );
+  } elseif ( $wp_query->is_search && $page_name == 'team' ) {
+  	return locate_template( 'team.php' );
   }
 
   return $template;   

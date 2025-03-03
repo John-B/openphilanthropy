@@ -178,3 +178,6 @@
   z-index: 0;
   position: relative;
 }
+#no-result {
+  position: absolute;
+}

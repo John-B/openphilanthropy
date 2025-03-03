@@ -179,7 +179,7 @@ add_action( 'init', 'taxonomy_organization_name' );
  */
 function taxonomy_teams() {
     $labels = array(
-        'name'              => _x( 'Team Membership (check only one)', 'taxonomy general name', 'oph' ),
+        'name'              => _x( 'Team Membership', 'taxonomy general name', 'oph' ),
         'singular_name'     => _x( 'Team', 'taxonomy singular name', 'oph' ),
         'add_new_item'      => __( 'Add New Team', 'oph' ),
         'all_items'         => __( 'All Teams', 'oph' ),
