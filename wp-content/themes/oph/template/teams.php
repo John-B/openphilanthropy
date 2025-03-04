@@ -79,6 +79,7 @@
                                 <div class="team-grid leadership" id="<?php echo $tax_term->slug; ?>-grid">
                                         <?php while ( $term_posts->have_posts() ) : $term_posts->the_post(); ?>
                                                 <?php
+						   $terms = [];
 						   $terms = get_the_terms(get_the_ID(), 'teams');
 						   for ($i = 0; $i < count($terms); $i++) { $term = $terms[$i];
                                                      if($tax_term->term_id === $term->term_id) { // Without this we end up printing posts or the term AND its parent term.
