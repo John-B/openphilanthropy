@@ -3,6 +3,7 @@ html, body {
 }
 .page-template-teams #leadership {
   grid-area: leadership;
+  width: 100%;
 }
 .page-template-teams #midriff {
   grid-area: midriff;
