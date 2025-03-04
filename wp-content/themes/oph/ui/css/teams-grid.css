@@ -376,6 +376,13 @@ html, body {
   }
   .page-template-teams .team-grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+  }
+  .page-template-teams .team-grid.leadership {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-column-gap: 15px;
@@ -404,6 +411,8 @@ html, body {
   padding: 15px 15px 0;
   background-color: #dee4f4;
   color: #000;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 .page-template-teams .team-flex article aside,
@@ -449,7 +458,7 @@ html, body {
 .page-template-teams .team-grid h6 {
   margin: 0 auto 8px;
   color: #000;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 22px;
@@ -488,8 +497,8 @@ html, body {
 
 .page-template-teams .team-flex img,
 .page-template-teams .team-grid img {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   margin: auto;
