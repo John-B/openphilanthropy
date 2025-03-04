@@ -29,10 +29,9 @@ function reorder_instructions_team() {
             echo '<div class="postbox" style="background:#0074a2;color:#fff;margin-top:40px;width: 97%;"><div class="inside">';
 	    echo '<h3>Guidance on team page setup</h3>';
             echo '<span style="font-size: larger;">1. Set up teams and sub-teams <a href="/wp-admin/edit-tags.php?taxonomy=teams&post_type=team" target="_blank" style="color: white;">here</a>.</span><br>';
-	    echo '<span>(For layout reasons, "Leadership Support" is a parent team, not a sub-team.)<span><br>';
             echo '<span style="font-size: larger;">2. Set order of teams and sub-teams <a href="/wp-admin/admin.php?page=customtaxorder-teams" target="_blank" style="color: white;">here</a> using drag & drop, then "Update Order", and "Save".</span><br>';
-            echo '<span style="font-size: larger;">3. When editing or adding a team member listed on this page check <strong>one</strong> box under "Team Membership".<br></span>';
-	    echo '<span>(Where a team has sub-team, this will normally be one of the sub-teams. If "team page exclusion" is checked, adding that person to a team is not required.)</span><br>';
+            echo '<span style="font-size: larger;">3. When editing or adding a team member listed on this page check at least one box under "Team Membership".<br></span>';
+	    echo '<span>(If "team page exclusion" is checked, adding that person to a team is not required.)</span><br>';
             echo '<span style="font-size: larger;">4. To re-order team members within a team, filter this page down to that team using the "All Teams" dropdown below and click "Filter", then drag & drop members into the desired order.<span>';
 	    echo '</div></div>';
         }
