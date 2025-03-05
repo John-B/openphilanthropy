@@ -6,7 +6,8 @@ function reorder_instructions_team() {
     global $my_admin_page;
     global $post;
     $screen = get_current_screen();
-    $slug = $post->post_name;
+    $slug = $post->post_name ?? "";
+    $post_type = $screen->post_type ?? "";
 
     if ( is_admin() && ($slug == 'team') ) {
         function add_teams_help_text() {
@@ -20,6 +21,7 @@ function reorder_instructions_team() {
         function add_teams_help_text() {
             echo '<div class="postbox" style="background:#0074a2;color:#fff;margin-top:40px; width:97%;"><div class="inside">';
             echo 'The "Order" field is not used. Order teams using drag & drop, and perform a save to ensure correct hierarchy <a href="/wp-admin/admin.php?page=customtaxorder-teams" target="_blank" style="color: lightgreen;">here</a>.';
+            echo '<br />The "Leadership" term should be first for proper functioning of the Leadership Panel.';
             echo '</div></div>';
         }
         add_action( 'all_admin_notices', 'add_teams_help_text' );
@@ -31,9 +33,17 @@ function reorder_instructions_team() {
             echo '<span style="font-size: larger;">1. Set up teams and sub-teams <a href="/wp-admin/edit-tags.php?taxonomy=teams&post_type=team" target="_blank" style="color: white;">here</a>.</span><br>';
             echo '<span style="font-size: larger;">2. Set order of teams and sub-teams <a href="/wp-admin/admin.php?page=customtaxorder-teams" target="_blank" style="color: white;">here</a> using drag & drop, then "Update Order", and "Save".</span><br>';
             echo '<span style="font-size: larger;">3. When editing or adding a team member listed on this page check at least one box under "Team Membership".<br></span>';
-	    echo '<span>(If "team page exclusion" is checked, adding that person to a team is not required.)</span><br>';
+	    echo '<span>(This ordering does not affect the Leadership Panel, where the ordering is set in the "Leadership Panel" box. If "team page exclusion" is checked, adding that person to a team is not required.)</span><br>';
             echo '<span style="font-size: larger;">4. To re-order team members within a team, filter this page down to that team using the "All Teams" dropdown below and click "Filter", then drag & drop members into the desired order.<span>';
 	    echo '</div></div>';
+        }
+        add_action( 'all_admin_notices', 'add_teams_help_text' );
+    }
+    if ( is_admin() && ($post_type == 'team') ) {
+        function add_teams_help_text() {
+            echo '<div class="postbox" style="background:#0074a2;color:#fff;margin-top:40px; width:97%;"><div class="inside">';
+            echo 'If you check the "Leadership" team please also complete the "Leadership Panel" section.';
+            echo '</div></div>';
         }
         add_action( 'all_admin_notices', 'add_teams_help_text' );
     }

@@ -113,3 +113,39 @@ add_filter('xmlrpc_enabled', '__return_false');
  * Allow use of core custom fields alongside ACF.
  */
 // add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
+
+/**
+ * Add a little JS to team edit pages.
+ */
+function team_javascript() {
+    $screen = get_current_screen();
+    $post_type = $screen->post_type ?? "not set";
+       if ( is_admin() && ($post_type == 'team') ) {
+        ?>
+<script>
+window.addEventListener('load', function() {
+  var checkbox = document.querySelector("#teamschecklist li input");
+  var leadership_panel = document.querySelector("#leadership_panel").parentElement.parentElement;
+  if (typeof checkbox !== 'undefined' && typeof checkbox !== null && typeof leadership_panel !== 'undefined' && typeof leadership_panel !== null ) {
+      if (checkbox.checked === true) {
+        leadership_panel.style.display = "block";
+      } else if (checkbox.checked === false) {
+        leadership_panel.style.display = "none";
+      }
+  }
+    checkbox.addEventListener('change', function(e) {
+      if (this.checked === true) {
+        leadership_panel.style.display = "block";
+        e.stopPropagation();
+       } else if (this.checked === false) {
+        leadership_panel.style.display = "none";
+        e.stopPropagation();
+      }
+    });
+});
+</script>
+        <?php
+      }
+}
+add_action('admin_head', 'team_javascript');

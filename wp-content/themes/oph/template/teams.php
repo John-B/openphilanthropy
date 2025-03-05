@@ -71,13 +71,45 @@
         // Clean up as to not affect other posts
       //  remove_filter( 'posts_orderby' , 'posts_orderby_lastname' );
       remove_filter( 'order_by' , 'menu_order' );
+           // Now get leadership posts again in an order defined b ACF leadershp_order field.
+           $term_posts_leadership = new WP_Query( // find posts with the correct term
+             array(
+              'no_found_rows' => true, // for performance
+              'ignore_sticky_posts' => true, // for performance
+              'post_type' => 'team',
+              'posts_per_page' => -1, // return all results
+    	      'orderby' => 'meta_value_num',
+  	      'meta_key' => 'leadership_order',
+   	      'order' => 'ASC',
+              'tax_query' => array(
+                array(
+                  'taxonomy' => $taxonomy,
+                  'field'    => 'name',
+                  'terms'    => array( "leadership" )
+               )
+           ),
+           'meta_query' => array(
+             'relation' => 'OR',
+               array(
+                 'key'     => 'teampage_exclusion',
+                 'compare' => 'NOT EXISTS'
+               ),
+               array(
+                 'key'     => 'teampage_exclusion',
+                 'value'   => '1',
+                 'compare' => '!='
+               ),
+           ),
+           'fields' => 'ids', // return the post IDs only
+           )
+         );
   ?>
 	<?php if ( $tax_term->slug === "leadership" ) : ?>
                 <div class="content-team__main collapsed-grid" id="leadership">
-                                <!-- The following allow class "team-flex" to center incomplete rows, or "team-grid" for a grid layout with 3 columns in desktop.-->
+                                <!-- The following allow class "team-flex" to center incomplete rows, or "team-grid" for a grid layout with 4 columns in desktop.-->
 			<?php echo $term_header; ?>
                                 <div class="team-grid leadership" id="<?php echo $tax_term->slug; ?>-grid">
-                                        <?php while ( $term_posts->have_posts() ) : $term_posts->the_post(); ?>
+                                        <?php while ( $term_posts_leadership->have_posts() ) : $term_posts_leadership->the_post(); ?>
                                                 <?php
 						   $terms = [];
 						   $terms = get_the_terms(get_the_ID(), 'teams');
