@@ -7,27 +7,27 @@ function reorder_instructions_team() {
     global $post;
     $screen = get_current_screen();
     $slug = $post->post_name ?? "";
-    $post_type = $screen->post_type ?? "";
+    $post_type = $screen->id ?? "";
 
     if ( is_admin() && ($slug == 'team') ) {
-        function add_teams_help_text() {
+        function add_teams_help_text_0() {
             echo '<div class="postbox" style="background:#0074a2;color:#fff;margin-top:40px; width:97%;"><div class="inside">';
             echo 'For guidance on setting up this auto-generated team page, see <a href="/wp-admin/edit.php?post_type=team" target="_blank" style="color: lightgreen;">the team member listing form</a>.';
             echo '</div></div>';
         }
-        add_action( 'all_admin_notices', 'add_teams_help_text' );
+        add_action( 'all_admin_notices', 'add_teams_help_text_0' );
     }
     if ( is_admin() && ($screen->id == 'edit-teams') && ($screen->taxonomy == 'teams') ) {
-        function add_teams_help_text() {
+        function add_teams_help_text_1() {
             echo '<div class="postbox" style="background:#0074a2;color:#fff;margin-top:40px; width:97%;"><div class="inside">';
             echo 'The "Order" field is not used. Order teams using drag & drop, and perform a save to ensure correct hierarchy <a href="/wp-admin/admin.php?page=customtaxorder-teams" target="_blank" style="color: lightgreen;">here</a>.';
             echo '<br />The "Leadership" term should be first for proper functioning of the Leadership Panel.';
             echo '</div></div>';
         }
-        add_action( 'all_admin_notices', 'add_teams_help_text' );
+        add_action( 'all_admin_notices', 'add_teams_help_text_1' );
     }
     if ( is_admin() && $screen->id == 'edit-team' ) {
-        function add_teams_help_text() {
+        function add_teams_help_text_2() {
             echo '<div class="postbox" style="background:#0074a2;color:#fff;margin-top:40px;width: 97%;"><div class="inside">';
 	    echo '<h3>Guidance on team page setup</h3>';
             echo '<span style="font-size: larger;">1. Set up teams and sub-teams <a href="/wp-admin/edit-tags.php?taxonomy=teams&post_type=team" target="_blank" style="color: white;">here</a>.</span><br>';
@@ -37,15 +37,15 @@ function reorder_instructions_team() {
             echo '<span style="font-size: larger;">4. To re-order team members within a team, filter this page down to that team using the "All Teams" dropdown below and click "Filter", then drag & drop members into the desired order.<span>';
 	    echo '</div></div>';
         }
-        add_action( 'all_admin_notices', 'add_teams_help_text' );
+        add_action( 'all_admin_notices', 'add_teams_help_text_2' );
     }
     if ( is_admin() && ($post_type == 'team') ) {
-        function add_teams_help_text() {
+        function add_teams_help_text_3() {
             echo '<div class="postbox" style="background:#0074a2;color:#fff;margin-top:40px; width:97%;"><div class="inside">';
             echo 'If you check the "Leadership" team please also complete the "Leadership Panel" section.';
             echo '</div></div>';
         }
-        add_action( 'all_admin_notices', 'add_teams_help_text' );
+        add_action( 'all_admin_notices', 'add_teams_help_text_3' );
     }
 }
 add_action( 'admin_notices', 'reorder_instructions_team' );
