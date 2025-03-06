@@ -40,9 +40,12 @@
 }
 
 /* Indenting all Lists */
+.content-basic-text .content-basic-text__main ol,
+.content-basic-text .content-basic-text__main ul,
 .entry-content ol,
 .entry-content ul {
   padding-left: 1.25rem;
+  margin-bottom: 20px;
 }
 .entry-content ol > li,
 .entry-content ul > li {
