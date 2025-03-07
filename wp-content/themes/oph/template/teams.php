@@ -178,7 +178,7 @@
 		<aside id="midriff"><h2 class="section-heading">Staff Directory</h2>
 			<div class="form-wrapper"><form class="team-search-form" action="" method="">
   				<input class="search-field" id="teams-search" type="search" name="" placeholder="Search names" value="">
-			</form><button onclick="searchText()" style="height: 40px;">Search</button>
+			</form><button onclick="searchText()" style="height: 40px;">Search</button><button onclick="clearText()" style="height: 40px;">Reset</button>
     <script>
 //	window.addEventListener("hashchange", function(e){ 
 //	  document.body.querySelectorAll('details')
@@ -266,6 +266,12 @@
             searchText();
           }
         });
+        function clearText() {
+            // Get the search term from the input field
+            const searchField = document.getElementById('teams-search');
+	    searchField.value = '';
+	    searchText();
+        }
 
     </script>
 			</div>

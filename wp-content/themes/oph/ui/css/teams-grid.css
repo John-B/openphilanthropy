@@ -28,6 +28,7 @@ html, body {
   margin-top: 50px;
   width: 100%;
   height: fit-content;
+  padding-bottom: 50px;
 }
 .page-template-teams #toc-placeholder {
   grid-area: toc;
@@ -134,7 +135,20 @@ html, body {
   color: inherit;
   text-decoration: underline;
 }
+@media only screen and (max-width: 767px) {
+  .page-template-teams #midriff .form-wrapper {
+     justify-content: center;
+     flex-wrap: wrap;
+  }
+  .page-template-teams #midriff .form-wrapper input,
+  .page-template-teams #midriff .form-wrapper button {
+    margin-bottom: 15px;
+  }
+}
 @media only screen and (min-width: 768px) {
+  .team-search-form input,.team-search-form button {
+    margin-bottom: 15px;
+  }
   .page-template-teams #team .content-single__main {
     margin-left: unset;
     width: 100%;
@@ -397,6 +411,7 @@ html, body {
   text-align: center;
   min-height: 105px;
   margin-bottom: 20px;
+  max-width: 95vw;
 }
 .page-template-teams .team-grid#leadership-grid .team-item-header {
   background: linear-gradient(00deg, #F4F7FF 70%, #FFF 30%);
