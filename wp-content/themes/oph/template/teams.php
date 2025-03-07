@@ -286,6 +286,7 @@
             teamGridSubheaders.forEach(element => {
               element.style.display = 'block';
             });
+	    searchField.focus();
         }
 
     </script>
