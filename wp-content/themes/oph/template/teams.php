@@ -275,7 +275,7 @@
 	    searchField.value = '';
             searchField.style.border = "2px solid #445277";
 	    var noResultsHtml = document.getElementById("no-result");
-	    if(typeof noResultsHtml !== null) {
+	    if(noResultsHtml !== null) {
 	      noResultsHtml.remove();
 	    }
             // Loop through each element and unhide them.
