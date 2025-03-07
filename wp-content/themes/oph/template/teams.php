@@ -267,10 +267,25 @@
           }
         });
         function clearText() {
+            // Get all elements with the class 'team-grid'
+            const teamGridElements = document.querySelectorAll('.team-item.staff');
+            const teamGridSubheaders = document.querySelectorAll('.term-h3');
             // Get the search term from the input field
             const searchField = document.getElementById('teams-search');
 	    searchField.value = '';
-	    searchText();
+            searchField.style.border = "2px solid #445277";
+	    var noResultsHtml = document.getElementById("no-result");
+	    if(typeof noResultsHtml !== null) {
+	      noResultsHtml.remove();
+	    }
+            // Loop through each element and unhide them.
+            teamGridElements.forEach(element => {
+              element.parentElement.style.display = 'grid';
+              element.style.display = 'block';
+            });
+            teamGridSubheaders.forEach(element => {
+              element.style.display = 'block';
+            });
         }
 
     </script>
