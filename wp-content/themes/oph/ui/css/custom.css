@@ -1358,7 +1358,7 @@ ul#expressions-of-interest {
   width: 320px;
   max-width: 65vw;
 }
-.newsletter-button {
+#footer #mc-embedded-subscribe.newsletter-button {
   color: white !important;
   font-weight: bold;
   height: 32px;
@@ -1367,6 +1367,7 @@ ul#expressions-of-interest {
   opacity: 0.9;
   margin: 0 0 0 -5px;
   vertical-align: top !important;
+  display: unset;
 }
 .newsletter-button:hover {
   opacity: 1;
