@@ -8,30 +8,24 @@ the_post();
 
 get_header();
 
+get_template_part('part/page', 'header');
+
 $content_sections = get_field('content_sections');
 $footnotes = get_field('footnotes');
+
 ?>
 
-<?php get_template_part('part/page', 'header'); ?>
 
 <div class="content-table-of-contents">
     <div class="content-single" id="research-post">
         <div class="wrap">
             <div class="content-single__container">
                 <div class="content-single__aside pagenav-aside">
-                    <h3>Table of Contents</h3>
-
-                    <nav aria-label="Post Navigation" class="aside-post-navigation" id="nav-post">
-                        <ul class="list-aside-post-navigation" id="post-navigation-list"></ul>
-                    </nav>
-
-                    <nav aria-label="Mobile Post Navigation" class="aside-post-navigation-mobile" id="nav-post-mobile">
-                        <select class="goto-select" id="post-navigation-list-mobile"></select>
-                    </nav>
-
-                    <svg aria-hidden="true" class="aside-post-navigation-icon" viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.352 1l7.395 7.5-7.395 7.5M1 8.397l21.748.103" stroke="#6e7ca0" stroke-width="2" />
-                    </svg>
+<?php
+$html = apply_filters( 'the_content', get_the_content() );
+include_once get_theme_file_path( 'part/new-toc.php' );
+echo make_table($html, true);
+?>
 
                     <?php if (get_field("social_share") == 'show' || !get_field("social_share")) : ?>
                         <div class="post-share">
@@ -69,7 +63,7 @@ $footnotes = get_field('footnotes');
                 </div>
 
                 <div class="content-single__main pagenav-content">
-                    <?php if ($post_thumbnail) : ?>
+                    <?php if (isset($post_thumbnail)) : ?>
                         <img class="post-thumbnail" src="<?php echo $post_thumbnail; ?>" alt="">
                     <?php endif; ?>
 

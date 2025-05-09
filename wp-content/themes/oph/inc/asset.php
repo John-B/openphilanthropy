@@ -11,6 +11,10 @@ function enqueue_asset() {
 
 	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/ui/css/custom.css', array(), '1.0.4' );
 
+	wp_enqueue_style( 'toc-style', get_template_directory_uri() . '/ui/css/toc-new.css', array(), '1.0.0' );
+
+	wp_enqueue_style( 'toc-research-style', get_template_directory_uri() . '/ui/css/toc-research.css', array(), '1.0.0' );
+
 	wp_enqueue_style( 'team-style', get_template_directory_uri() . '/ui/css/team-grid.css', array(), '1.0.0' );
 
 	wp_enqueue_style( 'teams-style', get_template_directory_uri() . '/ui/css/teams-grid.css', array(), '1.0.0' );

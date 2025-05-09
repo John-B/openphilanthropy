@@ -1,44 +1,32 @@
 html, body {
   scroll-behavior: smooth !important;
 }
-.page-template-teams #leadership {
-  grid-area: leadership;
-  width: 100%;
-}
-.page-template-teams #midriff {
-  grid-area: midriff;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: stretch;
-  align-items: center;
-  width: 98%;
-}
-.page-template-teams #midriff .form-wrapper {
+.single-research #midriff .form-wrapper {
   display: flex;
   column-gap: 10px;
   width: 100%;
   justify-content: right;
 }
-.page-template-teams #staff {
+.single-research #staff {
   grid-area: staff;
   width: 100%;
   margin-bottom: 50px;
 }
-.page-template-teams #toc {
-  margin-top: 50px;
+.single-research #toc {
   width: 100%;
   height: fit-content;
   padding-bottom: 50px;
+  margin-top: 10px;
 }
-.page-template-teams #toc-placeholder {
+.single-research #toc-placeholder {
   grid-area: toc;
   margin-top: 50px;
   width: 100%;
 }
-.page-template-teams #toc a.toc-sublink {
+.single-research #toc a.toc-sublink {
   display: block;
 }
-.page-template-teams #toc a h5 {
+.single-research #toc a h5 {
   color: #000;
   font-family: "Avenir";
   color: black;
@@ -46,56 +34,16 @@ html, body {
   padding-left: 20px;
   text-decoration: none;
   margin-bottom: 8px;
+  font-weight: 400 !important;
 }
-.page-template-teams #toc a h4 {
-  margin-bottom: 8px;
+.single-research #toc a h4 {
+  margin: 5px 0;
+  font-weight: 400 !important;
 }
-.page-template-teams #toc a {
+.single-research #toc a {
   text-decoration: none;
 }
-#team .wrap {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "leadership"
-    "midriff"
-    "toc"
-    "staff";
-  justify-items: center;
-}
-.team-search-form input {
-	margin: 0;
-	padding: 8px 22px 6px;
-	width: auto;
-	max-width: 50vw;
-	min-width: 0;
-	background: none;
-	border: 2px solid #445277;
-	border-radius: 999px;
-	box-shadow: none;
-	color: #445277;
-	font-family: "Avenir","Montserrat";
-	font-size: 16px;
-	font-weight: 800;
-	letter-spacing: 1px;
-	line-height: 1.375;
-	text-indent: 0;
-	appearance: none;
-	cursor: pointer;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	outline: 0;
-	position: relative;
-	z-index: 10;
-	vertical-align: middle;
-	transition: all 0.25s ease-out;
-}
-#teams-search::placeholder {
-  font-weight: normal;
-  color: black;
-}
-.page-template-teams h2.term-h2 {
+.single-research h2.term-h2 {
   padding-top: 30px;
   border-bottom: 4px solid #cdd2de;
   display: inline-block;
@@ -104,44 +52,52 @@ html, body {
   font-weight: bold;
   scroll-margin-top: 110px;
 }
-.page-template-teams h2.term-h2:first-of-type {
+.single-research h1,
+.single-research h2,
+.single-research h3,
+.single-research h4,
+.single-research h5,
+.single-research h6 {
+  scroll-margin-top: 110px;
+}
+.single-research h2.term-h2:first-of-type {
   border-top: none;
   padding-top: 0;
 }
-.page-template-teams h3.term-h3  {
+.single-research h3.term-h3  {
   color: #000;
   font-weight: 500;
   font-size: 29px;
   display: block;
   scroll-margin-top: 125px;
 }
-.page-template-teams .divider {
+.single-research .divider {
   display: block;
   height: 2px;
   background-color: #cdd2de;
 }
-.page-template-teams .divider:first-of-type {
+.single-research .divider:first-of-type {
   display: none;
 }
-.page-template-teams #primary_menu a,
-.page-template-teams h4 a {
+.single-research #primary_menu a,
+.single-research h4 a {
   text-decoration: none;
 }
-.page-template-teams details.toc-section {
+.single-research details.toc-section {
   padding-right: 20px;
 }
-.page-template-teams details a {
+.single-research details a {
   font-weight: normal;
   color: inherit;
   text-decoration: underline;
 }
 @media only screen and (max-width: 767px) {
-  .page-template-teams #midriff .form-wrapper {
+  .single-research #midriff .form-wrapper {
      justify-content: center;
      flex-wrap: wrap;
   }
-  .page-template-teams #midriff .form-wrapper input,
-  .page-template-teams #midriff .form-wrapper button {
+  .single-research #midriff .form-wrapper input,
+  .single-research #midriff .form-wrapper button {
     margin-bottom: 15px;
   }
 }
@@ -149,15 +105,15 @@ html, body {
   .team-search-form input,.team-search-form button {
     margin-bottom: 15px;
   }
-  .page-template-teams #team .content-single__main {
+  .single-research #team .content-single__main {
     margin-left: unset;
     width: 100%;
     max-width: 976px;
   }
-  .page-template-teams #midriff {
+  .single-research #midriff {
     grid-template-columns: repeat(2, 1fr);
   }
-  .page-template-teams #team .wrap {
+  .single-research #team .wrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 20px;
@@ -167,9 +123,8 @@ html, body {
       "toc staff staff";
     overflow: unset;
   }
-  .page-template-teams #toc {
+  .single-research #toc {
     position: sticky;
-    top:150px;
     height: fit-content;
     width: fit-content;
     overflow-x: hidden;
@@ -177,19 +132,18 @@ html, body {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .page-template-teams #team .content-single__main {
+  .single-research #team .content-single__main {
     width: 100%;
     max-width: 976px;
   }
-  .page-template-teams #toc {
+  .single-research #toc {
     position: sticky;
-    top: 150px;
     height: fit-content;
     width: fit-content;
     overflow-x: hidden;
     overflow-y: auto;
   }
-  .page-template-teams #team .wrap {
+  .single-research #team .wrap {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 20px;
@@ -201,17 +155,17 @@ html, body {
   }
 }
 /* Add dark background boxes */
-.page-template-teams #leadership .team-item summary {
+.single-research #leadership .team-item summary {
   height: 40px;
   width: 100%;
   display: block;
   background-color: #dee4f4;
 }
-.page-template-teams .team-grid .team-item details[open] summary::before, 
-.page-template-teams .team-grid .team-item details summary::before { 
+.single-research .team-grid .team-item details[open] summary::before, 
+.single-research .team-grid .team-item details summary::before { 
     display: none;
 }
-.page-template-teams .team-grid .team-item details[open] summary::after { 
+.single-research .team-grid .team-item details[open] summary::after { 
     content:""; 
     color: #445277; 
     position: absolute;
@@ -222,7 +176,7 @@ html, body {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16"><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/></svg>');
     /* filter: invert(98%) sepia(16%) saturate(296%) hue-rotate(92deg) brightness(95%) contrast(94%); */
 }
-.page-template-teams .team-grid .team-item details summary::after {
+.single-research .team-grid .team-item details summary::after {
     content:""; 
     color: #445277;
     position: absolute;
@@ -234,26 +188,26 @@ html, body {
     /* filter: invert(98%) sepia(16%) saturate(296%) hue-rotate(92deg) brightness(95%) contrast(94%); */
 }
 /* Deal with messed up markup in items. */
-.page-template-teams .team-grid .team-item details p:empty {
+.single-research .team-grid .team-item details p:empty {
   padding: 0;
   height: 0;
   margin: 0;
 }
-.page-template-teams .team-grid#leadership-grid .team-item-header h4 {
+.single-research .team-grid#leadership-grid .team-item-header h4 {
   color: #000;
 }
-.page-template-teams .team-grid#leadership-grid .team-item-header h6 {
+.single-research .team-grid#leadership-grid .team-item-header h6 {
   color: #445277;
 }
-.page-template-teams .team-grid {
+.single-research .team-grid {
   margin-bottom: 30px;
 }
-.page-template-teams .team-grid#leadership .team-item-header {
+.single-research .team-grid#leadership .team-item-header {
   margin-bottom: 0;
   padding-top: 0;
 }
 
-.page-template-teams .team-flex {
+.single-research .team-flex {
 	display: flex;
 	flex-flow: row;
 	flex-direction: row;
@@ -262,18 +216,18 @@ html, body {
 	justify-content: center;
         margin: 10px 0;
 }
-.page-template-teams .team-flex article {
+.single-research .team-flex article {
 	text-align: center;
 	min-height: 105px;
 	flex-basis: auto;
 	width: 98%;
 }
-.page-template-teams .content-team {
+.single-research .content-team {
     padding: 0;
 }
 
 @media only screen and (min-width: 576px) {
-    .page-template-teams .content-team {
+    .single-research .content-team {
         padding: 0;
     }
 }
@@ -326,18 +280,18 @@ html, body {
   line-height: 1;
   margin: 20px 0 0 20px;
 }
-.page-template-teams #team h2.term-h2 {
+.single-research #team h2.term-h2 {
   margin-top: 12px;
 }
-.page-template-teams #team h2.term-h2:first-of-type,
-.page-template-teams #team h2 {
+.single-research #team h2.term-h2:first-of-type,
+.single-research #team h2 {
   margin-top: 50px;
 }
-.page-template-teams #team #midriff h2 {
+.single-research #team #midriff h2 {
   margin-top: 25px;
 }
-.page-template-teams .mfp-inline-holder .mfp-content,
-.page-template-teams-modal .mfp-inline-holder .mfp-content {
+.single-research .mfp-inline-holder .mfp-content,
+.single-research-modal .mfp-inline-holder .mfp-content {
   background: white;
   width: 90%;
   padding: 1em;
@@ -345,16 +299,16 @@ html, body {
   box-shadow: 2px 2px 2px grey;
   border: 1px solid grey;
 }
-.page-template-teams .mfp-inline-holder .mfp-close,
-.page-template-teams-modal .mfp-inline-holder .mfp-close {
+.single-research .mfp-inline-holder .mfp-close,
+.single-research-modal .mfp-inline-holder .mfp-close {
   font-size: 32px;
 }
-.page-template-teams .team-item .open-popup-link {
+.single-research .team-item .open-popup-link {
   color: gray;
   font-size: 25px;
   margin: 0px 5px -5px -25px;
 }
-.page-template-teams .team-grid {
+.single-research .team-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
@@ -362,40 +316,40 @@ html, body {
 }
 
 @media only screen and (min-width: 768px) {
-  .page-template-teams .team-flex article {
+  .single-research .team-flex article {
 	text-align: center;
 	min-height: 105px;
 	flex-basis: auto;
 	width: 48%;
   }
-  .page-template-teams .team-grid {
+  .single-research .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     grid-column-gap: 10px;
     grid-row-gap: 30px;
   }
-  .page-template-teams .mfp-inline-holder .mfp-content {
+  .single-research .mfp-inline-holder .mfp-content {
     width: 80%;
     padding: 2em 2em 1em;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .page-template-teams .team-flex article {
+  .single-research .team-flex article {
 	text-align: center;
 	min-height: 105px;
 	flex-basis: auto;
 	width: 32%;
   }
-  .page-template-teams .team-grid {
+  .single-research .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-column-gap: 20px;
     grid-row-gap: 30px;
   }
-  .page-template-teams .team-grid.leadership {
+  .single-research .team-grid.leadership {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
@@ -404,25 +358,25 @@ html, body {
   }
 }
 
-.page-template-teams .team-grid article.team-item {
+.single-research .team-grid article.team-item {
   text-align: center;
 }
-.page-template-teams #leadership .team-grid article.team-item {
+.single-research #leadership .team-grid article.team-item {
   text-align: center;
   min-height: 105px;
   margin-bottom: 20px;
   max-width: 95vw;
 }
-.page-template-teams .team-grid#leadership-grid .team-item-header {
+.single-research .team-grid#leadership-grid .team-item-header {
   background: linear-gradient(00deg, #F4F7FF 70%, #FFF 30%);
 }
-.page-template-teams .team-grid .team-item div.team-item-content p,
-.page-template-teams .team-grid .team-item:has(details[open]),
-.page-template-teams .team-grid .team-item details {
+.single-research .team-grid .team-item div.team-item-content p,
+.single-research .team-grid .team-item:has(details[open]),
+.single-research .team-grid .team-item details {
   background-color: #dee4f4;
   color: white;
 }
-.page-template-teams .team-grid .team-item details p {
+.single-research .team-grid .team-item details p {
   padding: 15px 15px 0;
   background-color: #dee4f4;
   color: #000;
@@ -430,47 +384,47 @@ html, body {
   line-height: 24px;
 }
 
-.page-template-teams .team-flex article aside,
-.page-template-teams .team-grid article aside {
+.single-research .team-flex article aside,
+.single-research .team-grid article aside {
   display: none;
   text-align: center;
 }
 
-.page-template-teams .team-flex article:hover aside,
-.page-template-teams .team-grid article:hover aside {
+.single-research .team-flex article:hover aside,
+.single-research .team-grid article:hover aside {
   display: block;
 }
 
-.page-template-teams #leadership .team-item-header {
+.single-research #leadership .team-item-header {
   position: relative;
   height: 355px;
 }
 
-.page-template-teams .team-flex h4,
-.page-template-teams .team-flex a h4,
-.page-template-teams .team-grid h4,
-.page-template-teams .team-grid a h4 {
+.single-research .team-flex h4,
+.single-research .team-flex a h4,
+.single-research .team-grid h4,
+.single-research .team-grid a h4 {
   margin: 12px 0 4px;
   color: #445277;
   font-size: 20px;
   font-weight: 800;
   line-height: 28px;
 }
-.page-template-teams .team-flex a:hover,
-.page-template-teams .team-flex a:focus,
-.page-template-teams .team-grid a:hover,
-.page-template-teams .team-grid a:focus {
+.single-research .team-flex a:hover,
+.single-research .team-flex a:focus,
+.single-research .team-grid a:hover,
+.single-research .team-grid a:focus {
   text-decoration: underline;
 }
-.page-template-teams .team-flex a.open-popup-link:hover,
-.page-template-teams .team-flex a.open-popup-link:focus,
-.page-template-teams .team-grid a.open-popup-link:hover,
-.page-template-teams .team-grid a.open-popup-link:focus {
+.single-research .team-flex a.open-popup-link:hover,
+.single-research .team-flex a.open-popup-link:focus,
+.single-research .team-grid a.open-popup-link:hover,
+.single-research .team-grid a.open-popup-link:focus {
   text-decoration: none;
 }
 
-.page-template-teams .team-flex h6,
-.page-template-teams .team-grid h6 {
+.single-research .team-flex h6,
+.single-research .team-grid h6 {
   margin: 0 auto 8px;
   color: #000;
   font-size: 12px;
@@ -494,13 +448,13 @@ html, body {
   padding: 0 30px;
 }
 @media only screen and (max-width: 350px) {
-  .page-template-teams .team-flex h6,
-  .page-template-teams .team-grid h6 {
+  .single-research .team-flex h6,
+  .single-research .team-grid h6 {
     letter-spacing: 0;
   }
 }
-.page-template-teams .team-flex svg,
-.page-template-teams .team-grid svg {
+.single-research .team-flex svg,
+.single-research .team-grid svg {
   width: 35px;
   height: 16px;
   transition: all 0.15s ease-out;
@@ -510,8 +464,8 @@ html, body {
   margin-left: 10px;
 }
 
-.page-template-teams .team-flex img,
-.page-template-teams .team-grid img {
+.single-research .team-flex img,
+.single-research .team-grid img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -519,25 +473,25 @@ html, body {
   margin: auto;
 }
 
-.page-template-teams .team-flex .grid-team__icon,
-.page-template-teams .team-grid .grid-team__icon {
+.single-research .team-flex .grid-team__icon,
+.single-research .team-grid .grid-team__icon {
   margin-top: 10px;
   left: 0;
   position: relative;
   right: 0;
 }
 
-.page-template-teams .team-item {
+.single-research .team-item {
   position: relative;
   display: block;
 }
-.page-template-teams .team-item details {
+.single-research .team-item details {
   position: relative;
   text-align: left;
   display: flex;
 }
-.page-template-teams .team-item div.team-item-content p,
-.page-template-teams .team-item details p {
+.single-research .team-item div.team-item-content p,
+.single-research .team-item details p {
   position: relative;
   text-align: left;
   z-index: 999;
@@ -553,15 +507,15 @@ html, body {
   padding: 0.5em 10px 0.5em 10px;
   line-height: 20px
 }
-.page-template-teams .team-item summary {
+.single-research .team-item summary {
   position: absolute;
   list-style: none;
   margin-top: -24px;
 }
-.page-template-teams .team-item summary::-webkit-details-marker {display: none; }
+.single-research .team-item summary::-webkit-details-marker {display: none; }
 
 /* By using [open] we can define different styles when the disclosure widget is open */
-.page-template-teams .team-item details[open] summary::before { 
+.single-research .team-item details[open] summary::before { 
     content:""; 
     color: grey; 
     position: absolute;
@@ -572,7 +526,7 @@ html, body {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16"><path fill="currentColor" stroke="currentColor" fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>');
     filter: invert(49%) sepia(16%) saturate(296%) hue-rotate(184deg) brightness(95%) contrast(94%);
 }
-.page-template-teams .team-item details summary::before {
+.single-research .team-item details summary::before {
     content:""; 
     color: grey;
     position: absolute;
@@ -583,19 +537,19 @@ html, body {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill="currentColor" stroke="currentColor" fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
     filter: invert(49%) sepia(16%) saturate(296%) hue-rotate(184deg) brightness(95%) contrast(94%);
 }
-.page-template-teams .cta-button {
+.single-research .cta-button {
   z-index: 0;
   position: relative;
 }
-.page-template-teams .teams-navigation-icon {
+.single-research .toc-navigation-icon {
   width: 12px;
-  margin: 10px 0 0 10px;
+  margin: 15px 0 0 10px;
   padding: 0;
   display: flex;
   cursor: pointer;
   flex-direction: column;
 }
-.team-toc-main {
+summary.toc-main {
   display: flex;
 }
 .trigger {
@@ -613,6 +567,6 @@ details[open] .trigger.team-toc-close {
 details[open] .trigger.team-toc-open {
   display: none;
 }
-.page-template-teams details summary::-webkit-details-marker {
-  display: none;
-}
+.single-research details summary::-webkit-details-marker {
+        display: none;
+      }

@@ -51,6 +51,8 @@ foreach ($authors_array as $a) :
 endforeach;
 
 $hidePub = get_field('hide_pubDate');
+
+
 ?>
 
 <?php get_template_part('part/page', 'header'); ?>
@@ -61,20 +63,12 @@ $hidePub = get_field('hide_pubDate');
 	<div class="wrap">
 		<div class="content-single__container">
 			<div class="content-single__aside pagenav-aside">
-				<h3>Table of Contents</h3>
+<?php
+$html = apply_filters( 'the_content', get_the_content() );
 
-				<nav aria-label="Post Navigation" class="aside-post-navigation" id="nav-post">
-					<ul class="list-aside-post-navigation" id="post-navigation-list"></ul>
-				</nav>
-
-				<nav aria-label="Mobile Post Navigation" class="aside-post-navigation-mobile" id="nav-post-mobile">
-					<select class="goto-select" id="post-navigation-list-mobile"></select>
-				</nav>
-
-				<svg aria-hidden="true" class="aside-post-navigation-icon" viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M15.352 1l7.395 7.5-7.395 7.5M1 8.397l21.748.103" stroke="#6e7ca0" stroke-width="2" />
-				</svg>
-
+include_once get_theme_file_path( 'part/new-toc.php' );
+echo make_table($html, true);
+?>
 				<?php if (get_field("social_share") == 'show' || !get_field("social_share")) : ?>
 					<div class="post-share">
 						<div class="a2a_wrapper">

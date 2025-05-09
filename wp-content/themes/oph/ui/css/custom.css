@@ -1398,3 +1398,8 @@ ul#expressions-of-interest {
     padding: 0;
   }
 }
+.content-careers__aside li a span {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+}
