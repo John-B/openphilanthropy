@@ -15,6 +15,8 @@ function enqueue_asset() {
 
 	wp_enqueue_style( 'toc-research-style', get_template_directory_uri() . '/ui/css/toc-research.css', array(), '1.0.0' );
 
+	wp_enqueue_style( 'single-careers-style', get_template_directory_uri() . '/ui/css/single-careers.css', array(), '1.0.0' );
+
 	wp_enqueue_style( 'team-style', get_template_directory_uri() . '/ui/css/team-grid.css', array(), '1.0.0' );
 
 	wp_enqueue_style( 'teams-style', get_template_directory_uri() . '/ui/css/teams-grid.css', array(), '1.0.0' );
