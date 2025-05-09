@@ -16,11 +16,11 @@
 	<div class="wrap">
 		<div class="content-single__container">
 			<div class="content-single__aside pagenav-aside">
-				<h3>Table of Contents</h3>
-
-				<ul aria-label="Post Navigation List" class="aside-post-navigation" id="post-navigation-list"></ul>
-
-				<select aria-label="Mobile Post Navigation List" data-input-placeholder="Type to search..." class="aside-post-navigation-mobile goto-select" id="post-navigation-list-mobile"></select>
+<?php
+$html = apply_filters( 'the_content', get_the_content() );
+include_once get_theme_file_path( 'part/new-toc.php' );
+echo make_table($html, true);
+?>
 
 				<svg aria-hidden="true" class="aside-post-navigation-icon" viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.352 1l7.395 7.5-7.395 7.5M1 8.397l21.748.103" stroke="#6e7ca0" stroke-width="2"/></svg>
 
