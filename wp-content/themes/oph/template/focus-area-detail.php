@@ -4,6 +4,8 @@
 	 */
 
 	the_post();
+	global $post;
+	$post_slug = $post->post_name;
 
 	get_header();
 
@@ -404,7 +406,11 @@
 																				<a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo oph_filter($post->post_title, "*"); ?></a>
 																			</h5>
 
-																			<?php if ( $team_title ) : ?>
+																			<?php // Change Eli Rose's team title on one page.
+ 																			   global $post;
+																			   $team_slug = $post->post_name;
+																			   if ( $post_slug == "potential-risks-advanced-ai" && $team_slug == "eli-rose") { $team_title = "Program Officer, Global Catastrophic Risks Capacity Building"; }
+																			   if($team_title) : ?>
 																				<h6><?php echo $team_title; ?></h6>
 																			<?php endif; ?>
 
