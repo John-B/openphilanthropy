@@ -5,8 +5,8 @@
 // Start of code for new PHP Table of Contents.
 // This is largely taken from the f70-simple-table-of-contents plugin, and modified.
 function dt_anchor_content_h1_h6 ($content) {
-    // Pattern that we want to match
-    $pattern = "~<h(1|2|3|4|5|6)[^>]*>(.*?)</h(1|2|3|4|5|6)>~";
+    // Pattern that we want to match. Do not replace id if it already exists.
+    $pattern = "~<h(1|2|3|4|5|6) *[^>|id=]*>(.*?)</h(1|2|3|4|5|6)>~";
 
     // now run the pattern and callback function on content
     // and process it through a function that replaces the title with an id
