@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * Template Name: Table of Contents
+	 * Template Name: Table of Contents (old, do not use)
 	 */
 
 	the_post();
