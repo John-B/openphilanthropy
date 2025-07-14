@@ -7,7 +7,7 @@ function enqueue_asset() {
 
 	wp_enqueue_style( 'jquery-bundle-style', get_template_directory_uri() . '/ui/css/jquery.bundle.css' );
 
-	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/ui/css/main.min.css', array(), '1.0.1' );
+	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/ui/css/main.css', array(), '1.0.1' );
 
 	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/ui/css/custom.css', array(), '1.0.4' );
 

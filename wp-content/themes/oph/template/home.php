@@ -19,12 +19,15 @@ $homepage_grants_title = get_field('homepage_grants_title');
 $homepage_research = get_field('homepage_research');
 $homepage_research_button = get_field('homepage_research_button');
 $homepage_research_title = get_field('homepage_research_title');
+
+$homepage_initiatives = get_field('homepage_initiatives');
+$homepage_initiatives_button = get_field('homepage_initiatives_button');
+$homepage_initiatives_title = get_field('homepage_initiatives_title');
 ?>
 
 <?php get_template_part('part/hero'); ?>
 
-<?php if ($homepage_grants) : ?>
-	<div id="highlighted-grants">
+<!--	<div id="highlighted-grants">
 		<div class="wrap">
 			<?php if ($homepage_grants_title) : ?>
 				<div class="line-heading">
@@ -129,8 +132,11 @@ $homepage_research_title = get_field('homepage_research_title');
 				</div>
 			<?php endif; ?>
 		</div>
-	</div>
-<?php endif; ?>
+	</div> -->
+
+<!-- we are not displaying homepage content <div id="homepage-content"> -->
+  <?php the_content(); ?>
+</div>
 
 <div id="about">
 	<div class="wrap">
@@ -237,13 +243,13 @@ $homepage_research_title = get_field('homepage_research_title');
 						<li<?php if (!$research_eyebrow_copy) {
 								echo ' class="has-no-eyebrow-copy"';
 							} ?>>
-							<h5><?php if ($research_eyebrow_link) {
+							<!--do not print <h5><?php if ($research_eyebrow_link) {
 									echo '<a href="' . $research_eyebrow_link . '">';
 								}
 								echo $research_eyebrow_copy;
 								if ($research_eyebrow_link) {
 									echo '</a>';
-								} ?></h5>
+								} ?></h5> -->
 
 							<h4>
 								<a href="<?php echo $research_link; ?>"><?php echo $research_title; ?></a>
@@ -269,6 +275,118 @@ $homepage_research_title = get_field('homepage_research_title');
 				<div class="button-group">
 					<a class="button" href="/research">View All Research &amp; Updates</a>
 				</div>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>
+<?php if ($homepage_initiatives) : ?>
+	<div id="initiatives-preview">
+		<div class="wrap">
+			<?php if ($homepage_initiatives_title) : ?>
+				<div class="line-heading">
+					<h2><?php echo $homepage_initiatives_title; ?></h2>
+				</div>
+			<?php endif; ?>
+
+			<div class="research-preview-content">
+				<ul class="list-related-posts list-3-col" id="initiatives-preview-list">
+					<?php foreach ($homepage_initiatives as $i) : ?>
+
+						<?php
+						$research_post = $i['post'][0];
+
+						if ($research_post) {
+							$research_content_type = get_the_terms($research_post->ID, 'content-type');
+
+							$linkExternally = get_field('externally_link', $research_post->ID);
+							if ($linkExternally) {
+								$research_link = get_field('external_url', $research_post->ID);
+							} else {
+								$research_link = get_permalink($research_post->ID);
+							}
+
+							$research_title = get_the_title($research_post->ID);
+
+							$research_excerpt_source = get_the_excerpt($research_post->ID);
+
+							$research_excerpt = array(
+								'append' => '...',
+								'limit' => 38,
+								'limitby' => 'word',
+								'source' => $research_excerpt_source
+							);
+
+							$research_description = excerpt($research_excerpt);
+						}
+
+						if ($research_content_type) {
+							$first_parent_term = get_term_top_most_parent($research_content_type[0], 'content-type');
+							$research_eyebrow_copy = $first_parent_term->name;
+							$research_eyebrow_link = get_term_link($first_parent_term);
+
+							// Top level content types uses document root, remove the standard content-type path
+							$research_eyebrow_link = str_replace("content-type/", '', $research_eyebrow_link);
+						}
+
+						if ($i['description']) {
+							$research_description = $i['description'];
+						}
+
+						if ($i['eyebrow_copy']) {
+							$research_eyebrow_copy = $i['eyebrow_copy'];
+						}
+
+						if ($i['eyebrow_link']) {
+							$research_eyebrow_copy = $i['eyebrow_link'];
+						}
+
+						if ( isset($i['image']) ) {
+							$research_image = $i['image']['sizes']['lg'];
+						}
+
+						if ( isset($i['link']['url']) ) {
+							$research_link = $i['link']['url'];
+						}
+
+						if ( isset($i['title']) ) {
+							$research_title = $i['title'];
+						}
+						?>
+
+						<li<?php if (!$research_eyebrow_copy) {
+								echo ' class="has-no-eyebrow-copy"';
+							} ?>>
+							<!--do not print <h5><?php // do not print eyebrow link, set it to false.
+								  if ($research_eyebrow_link) {
+									echo '<a href="' . $research_eyebrow_link . '">';
+								}
+								echo $research_eyebrow_copy;
+								if ($research_eyebrow_link) {
+									echo '</a>';
+								} ?></h5> -->
+
+							<h4>
+								<a href="<?php echo $research_link; ?>"><?php echo $research_title; ?></a>
+							</h4>
+
+							<?php if ($research_description) : ?>
+								<div class="single-related-posts__description">
+									<?php echo $research_description; ?>
+								</div>
+							<?php endif; ?>
+
+							<div class="single-related-posts__link">
+								<a href="<?php echo $research_link; ?>">
+									Read More <svg viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15.352 1l7.395 7.5-7.395 7.5M1 8.397l21.748.103" stroke="#6e7ca0" stroke-width="2"></path>
+									</svg>
+<!--white arrow, if used add class .white to single-related-posts__link <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 227.096 227.096" xml:space="preserve" fill="none" stroke="#ffffff" stroke-width="12">
+<polygon style="fill:#ffffff;" points="152.835,39.285 146.933,45.183 211.113,109.373 0,109.373 0,117.723 211.124,117.723 146.933,181.902 152.835,187.811 227.096,113.55 "/></svg>-->
+								</a>
+							</div>
+							</li>
+						<?php endforeach; ?>
+				</ul>
 			</div>
 		</div>
 	</div>
