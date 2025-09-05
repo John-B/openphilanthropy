@@ -467,7 +467,7 @@
 
 						$grant_amount_total = array_sum( $grant_amount_array );
 						$grant_amount_total = $grant_amount_total / 1000 / 1000;
-						$grant_amount_total = number_format( $grant_amount_total, 1, '.', '' );
+						$grant_amount_total = number_format( $grant_amount_total, 2, '.', '' );
 
 						// Remove leading 0
 						$grant_amount_total = ltrim( $grant_amount_total, '0' );
@@ -531,7 +531,10 @@
 															{
 																echo floor($number_val / 10) * 10 . "+";
 															}
-															else if ($number_val >= 100 && strpos(strtolower($title), "million") !== false) {
+															else if ($number_val >= 1000 && strpos(strtolower($title), "million") !== false) {
+																echo round(($number_val / 1000), 2) . "+";
+																$title = str_ireplace("Million", "Billion", $title);
+															} else if ($number_val >= 100 && strpos(strtolower($title), "million") !== false) {
 																echo floor($number_val / 10) * 10 . "+";
 															} else if (strpos(strtolower($title), "million") !== false) {
 																echo floor($number_val) . "+";
