@@ -539,7 +539,7 @@
 															} else if (strpos(strtolower($title), "million") !== false) {
 																echo floor($number_val) . "+";
 															} else {
-																echo floor($number_val);
+																echo $number_val;
 															}
 														?>
 													</span> 
